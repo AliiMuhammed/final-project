@@ -1,26 +1,3 @@
-// // movieReducer.js
-// const initialState = {
-//   nowPlaying: [],
-//   popular: [],
-//   topRated: [],
-//   upcoming: [],
-// };
-
-// const movieReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "FETCH_NOW_PLAYING":
-//       return { ...state, nowPlaying: action.payload };
-//     // Define similar cases for other movie categories.
-//     default:
-//       return state;
-//   }
-// };
-
-// export default movieReducer;
-
-// movieReducer.js
-
-// Import the action types for movie categories
 import {
   FETCH_NOW_PLAYING,
   FETCH_POPULAR,
