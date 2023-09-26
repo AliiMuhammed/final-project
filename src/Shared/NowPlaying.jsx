@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchNowPlaying } from "../Actions/movieActions";
 import MovieList from "./MovieList";
+import MainHeader from "./MainHeader";
+import { BsFillCollectionPlayFill } from "react-icons/bs";
 
 function NowPlayingMovies({ nowPlaying, fetchNowPlaying }) {
   useEffect(() => {
@@ -9,10 +11,14 @@ function NowPlayingMovies({ nowPlaying, fetchNowPlaying }) {
   }, [fetchNowPlaying]);
 
   return (
-    <div>
-      <h1>Now Playing Movies</h1>
-      <MovieList movies={nowPlaying} />
-    </div>
+    <>
+      <section className="movieList-section">
+        <div className="container">
+          <MainHeader title={"Now Playing"} icon={<BsFillCollectionPlayFill/>}/>
+          <MovieList movies={nowPlaying.slice(0, 8)} />
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -21,4 +27,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { fetchNowPlaying })(NowPlayingMovies);
-

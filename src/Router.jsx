@@ -3,6 +3,7 @@ import App from "./App";
 import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
 import Movie from "./Pages/Movie/movie";
+import TvShow from "./Pages/TvShow/TvShow";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/movies",
         element: <Movie />,
+      },
+      {
+        path: "/tvshows",
+        element: <TvShow />,
       },
     ],
     errorElement: <NotFound />,
