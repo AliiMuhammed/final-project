@@ -25,7 +25,7 @@
 
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
-  height: 1000vh;
+  
   background-color: var(--main-bg) ;
   color: var(--main-font-color);
 }
@@ -91,4 +91,8 @@ a {
 
 .main-btn:hover{
   background-color: transparent;
+}
+
+section{
+  margin: 10rem 0;
 }
