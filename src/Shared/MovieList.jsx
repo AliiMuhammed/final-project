@@ -1,9 +1,10 @@
 // MovieList.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import MovieCard from "./Card";
+import MovieCard from "./MovieCard";
 
 function MovieList({ movies }) {
+  console.log(movies);
   return (
     <Container style={{ marginTop: "70px" }}>
       <Row>

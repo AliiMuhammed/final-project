@@ -1,17 +1,14 @@
-import React from 'react'
-import "./Style/home.css"
-import MovieCard from '../../Shared/MovieCard'
+import React from "react";
+import "./Style/home.css";
+import MovieCard from "../../Shared/MovieCard";
 function Home() {
   return (
     <>
-    <section className="popular-movies-section">
-      <div className="container">
-        <MovieCard/>
-      </div>
-    </section>
+      <section className="popular-movies-section">
+        <div className="container"></div>
+      </section>
     </>
-    
-  )
+  );
 }
 
-export default Home
+export default Home;
