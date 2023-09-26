@@ -25,7 +25,7 @@ function NavBar() {
     {
       id: 3,
       name: "TV shows",
-      path: "/TV-shows",
+      path: "/tvshows",
     },
     {
       id: 4,
