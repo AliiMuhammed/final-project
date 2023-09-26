@@ -1,22 +1,3 @@
-// movieActions.js
-// import axios from "axios";
-
-// const API_KEY = "4aa3fd8db30994a6860649f1e8d70cd6";
-
-// export const fetchNowPlaying = () => async (dispatch) => {
-//   try {
-//     const response = await axios.get(
-//       `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`
-//     );
-//     dispatch({ type: "FETCH_NOW_PLAYING", payload: response.data.results });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
-// Create similar actions for other movie categories (popular, top_rated, upcoming).
-
-// movieActions.js
 import axios from 'axios';
 
 const API_KEY = "4aa3fd8db30994a6860649f1e8d70cd6";

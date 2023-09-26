@@ -20,7 +20,7 @@ function NavBar() {
     {
       id: 2,
       name: "Movies",
-      path: "/Movies",
+      path: "/movies",
     },
     {
       id: 3,
