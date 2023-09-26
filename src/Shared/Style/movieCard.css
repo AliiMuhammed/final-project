@@ -20,6 +20,7 @@
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
+    margin: 0 auto;
 }
 
 .movie-card:hover {
@@ -57,3 +58,19 @@
 .main-btn.card-btn {
     padding: 0.3rem 0.7rem;
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .movie-card {
+        width: 85%;
+       
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 768px)and (max-width: 992px) {
+    .movie-card {
+        width: 90%;
+
+    }
+  }

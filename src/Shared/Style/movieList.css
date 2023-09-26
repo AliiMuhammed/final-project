@@ -1,5 +1,28 @@
 .movieList-section .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.movieList-section .container .movies-cards{
     display: grid;
     grid-template-columns: repeat(4 ,1fr);
     gap: 2rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .movieList-section .container .movies-cards{
+       
+        grid-template-columns: 1fr;
+        
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px)and (max-width: 992px) {
+    .movieList-section .container .movies-cards{
+       
+        grid-template-columns: repeat(2 ,1fr);
+        
+    }
 }

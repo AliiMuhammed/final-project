@@ -2,19 +2,23 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPopular } from "../Actions/movieActions";
 import MovieList from "./MovieList";
-
+import MainHeader from "./MainHeader";
+import {BsFire} from 'react-icons/bs'
 function Popular({ popular, fetchPopular }) {
   useEffect(() => {
     fetchPopular();
   }, [fetchPopular]);
 
-  console.log(popular);
 
   return (
-    <div>
-      <h1>Popular Movies</h1>
-      <MovieList movies={popular.slice(0,8)} />
-    </div>
+    <>
+      <section className="movieList-section">
+        <div className="container">
+          <MainHeader title={"popular"} icon={<BsFire/>}/>
+          <MovieList movies={popular.slice(0, 8)} />{" "}
+        </div>
+      </section>
+    </>
   );
 }
 
