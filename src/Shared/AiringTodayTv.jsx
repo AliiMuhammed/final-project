@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchAiringToday } from "../Actions/tvShowActions"; 
 import MovieList from "./MovieList"; 
+import {BsFire} from 'react-icons/bs'
+import MainHeader from "../Shared/MainHeader";
 
 function AiringTodayTv({ airing, fetchAiringToday }) {
   useEffect(() => {
@@ -10,10 +12,15 @@ function AiringTodayTv({ airing, fetchAiringToday }) {
   }, [fetchAiringToday]);
 
   return (
-    <div>
-      <h1>Airing Today TV Shows</h1>
-      <MovieList movies={airing.slice(0, 8)} />
-    </div>
+    <>
+
+    <section className="movieList-section">
+        <div className="container">
+          <MainHeader title={"Airing Today TV Shows"} icon={<BsFire/>}/>
+          <MovieList movies={airing.slice(0, 8)} />
+        </div>
+      </section>
+    </>
   );
 }
 
