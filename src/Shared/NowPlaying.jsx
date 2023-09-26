@@ -11,7 +11,7 @@ function NowPlayingMovies({ nowPlaying, fetchNowPlaying }) {
   return (
     <div>
       <h1>Now Playing Movies</h1>
-      <MovieList movies={nowPlaying} />
+      <MovieList movies={nowPlaying.slice(0, 8)} />
     </div>
   );
 }

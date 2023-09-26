@@ -1,12 +1,12 @@
 // MovieList.js
 import React from "react";
 import MovieCard from "./MovieCard";
-
+import "./Style/movieList.css"
 function MovieList({ movies }) {
-  console.log(movies);
+  
   return (
     <>
-      <section className="popular-movies-section">
+      <section className="movieList-section">
         <div className="container">
           {movies.map((movie) => (
             <MovieCard movie={movie}  key={movie.id}/>
