@@ -3,7 +3,6 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 function MovieList({ movies }) {
-  console.log(movies);
   return (
     <>
       <section className="popular-movies-section">
