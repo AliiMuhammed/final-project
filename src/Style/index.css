@@ -1,0 +1,94 @@
+/* start variables */
+:root {
+  --main-font-color: #FFF;
+  --second-font-color:  #4b5563;
+  --hover-color: #f20000;
+  --main-bg:#101435;
+
+  --main-transition: all 0.3s ease-in-out;
+  --main-border-radius:5px;
+}
+
+::selection {
+  color: #fff;
+  background: var(--hover-color);
+}
+
+/* end variables */
+
+/*Start glopal rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 1000vh;
+  background-color: var(--main-bg) ;
+  color: var(--main-font-color);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Media query for small screens  */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+
+  }
+}
+
+/* Media query for medium screens  */
+@media screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+
+  }
+}
+
+/* Media query for large screens  */
+
+@media screen and (min-width:1200px) {
+  .container {
+    width: 1200px;
+
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.main-btn{
+  background-color: var(--hover-color);
+  border: 2px solid var(--hover-color);
+  color: #ffff;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+
+.main-btn:hover{
+  background-color: transparent;
+}
