@@ -1,9 +1,14 @@
 import React from 'react'
 import "./Style/home.css"
+import MovieCard from '../../Shared/MovieCard'
 function Home() {
   return (
     <>
-    <div >Home</div>
+    <section className="popular-movies-section">
+      <div className="container">
+        <MovieCard/>
+      </div>
+    </section>
     </>
     
   )
