@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../Assets/images/logo/logo.png";
-import { BsSearch } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
 import { MdFavorite } from "react-icons/md";
 
@@ -18,16 +17,10 @@ function NavBar() {
                 <img src={logo} alt="logo" />
               </Link>
             </div>
-            {/* <div className="search">
-              <input type="search" placeholder="Search Movie Name from here" name="query" id="search-input" />
-              <button className="main-btn search-btn">
-                <BsSearch />
-              </button>
-            </div> */}
             <div className="links">
               <ul>
                 <li>
-                  <Link to={"/"}>Movies</Link>
+                  <Link to={"/movie"}>Movies</Link>
                 </li>
                 <li>
                   <Link to={"/"}>TV shows</Link>
