@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './Style/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Style/index.css';
 import {  RouterProvider } from 'react-router';
 import Router from "./Router"
 
