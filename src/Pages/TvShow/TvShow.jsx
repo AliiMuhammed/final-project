@@ -6,7 +6,6 @@ function TvShow() {
     <div>
       <AiringTodayTv />
     </div>
-
     
   );
 }

@@ -86,7 +86,7 @@ function NavBar() {
                     <Link to={"/login"}>
                       <FiLogIn />
                     </Link>
-                    <Link to={"/login"}>
+                    <Link to={"/fav"}>
                       <MdFavorite />
                     </Link>
                   </div>
