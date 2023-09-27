@@ -1,4 +1,4 @@
-.mySwiper {
+.mySwiper.home {
     height: 50vh;
     position: relative;
     font-weight: 700;
@@ -6,7 +6,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
-    .mySwiper {
+    .mySwiper.home {
         height: 29vh;
         position: relative;
     }
@@ -14,13 +14,13 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-    .mySwiper {
+    .mySwiper.home {
         height: 40vh;
         position: relative;
     }
 }
 
-.mySwiper .slider-content::after {
+.mySwiper.home .slider-content::after {
     content: "";
     position: absolute;
     top: 0%;
@@ -31,7 +31,7 @@
     z-index: -1;
 }
 
-.mySwiper .slider-content {
+.mySwiper.home .slider-content {
     height: 100%;
     position: relative;
     padding: 4rem;
@@ -40,7 +40,7 @@
     justify-content: center;
 }
 
-.mySwiper .slider-content .title {
+.mySwiper.home .slider-content .title {
     font-size: 4.5rem;
     margin-bottom: 2rem;
 }
@@ -48,7 +48,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
 
-    .mySwiper .slider-content .title {
+    .mySwiper.home .slider-content .title {
         font-size: 1.2rem;
         margin-bottom: 1rem;
         font-weight: 700;
@@ -74,7 +74,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
-    .mySwiper .slider-content .rate-date{
+    .mySwiper .slider-content .rate-date {
         margin-bottom: 1rem;
     }
 
@@ -101,6 +101,7 @@
     font-size: 1rem;
     font-weight: 700;
 }
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
     .mySwiper .slider-content .btns .watch-btn {
@@ -111,6 +112,7 @@
     }
 
 }
+
 .mySwiper .slider-content .btns .fav-slider-btn {
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
