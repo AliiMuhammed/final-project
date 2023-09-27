@@ -4,6 +4,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
 import Movie from "./Pages/Movie/movie";
 import TvShow from "./Pages/TvShow/TvShow";
+import Favourite from "./Pages/Fav/Favourite";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/tvshows",
         element: <TvShow />,
+      },
+      {
+        path: "/fav",
+        element: <Favourite />,
       },
     ],
     errorElement: <NotFound />,

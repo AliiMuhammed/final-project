@@ -4,6 +4,7 @@ import { fetchNowPlaying } from "../Actions/movieActions";
 import MovieList from "./MovieList";
 import MainHeader from "./MainHeader";
 import { BsFillCollectionPlayFill } from "react-icons/bs";
+import Paginate from "./Pagenation";
 
 function NowPlayingMovies({ nowPlaying, fetchNowPlaying }) {
   useEffect(() => {
@@ -18,6 +19,7 @@ function NowPlayingMovies({ nowPlaying, fetchNowPlaying }) {
           <MovieList movies={nowPlaying.slice(0, 8)} />
         </div>
       </section>
+      <Paginate />
     </>
   );
 }
