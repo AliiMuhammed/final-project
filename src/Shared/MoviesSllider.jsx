@@ -36,9 +36,7 @@ function MoviesSllider({ topRated, fetchTopRated }) {
           disableOnInteraction: false,
         }}
         loop={true}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={false}
         modules={[Autoplay, Pagination]}
         className="mySwiper top-rated"
       >
