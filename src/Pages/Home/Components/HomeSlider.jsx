@@ -29,7 +29,7 @@ function HomeSlider({ nowPlaying, fetchNowPlaying }) {
         }}
         navigation={true}
         modules={[Autoplay]}
-        className="mySwiper"
+        className="mySwiper home"
       >
         {nowPlaying.map((movie) => {
           return (
