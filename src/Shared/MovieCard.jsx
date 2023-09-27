@@ -22,7 +22,7 @@ function MovieCard({ movie, favorites, addToFavorites,id }) {
   return (
     <>
       <div className="movie-card">
-        <Link to={`/movie/${id}`}>
+        <Link to={`/movie/${id}`} target="_blank">
           <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt=""
