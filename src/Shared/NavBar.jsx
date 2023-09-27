@@ -56,8 +56,6 @@ function NavBar() {
               </button>
             </div> */}
             <div className="links">
-    
-
               <ul
                 className={`nav-links ${
                   isNavShowing ? "show-nav" : "hide-nav"
@@ -83,10 +81,16 @@ function NavBar() {
                 })}
                 <li>
                   <div className="icons">
-                    <Link to={"/login"}>
+                    <Link
+                      to={"/login"}
+                      onClick={() => setIsNavShowing((prev) => !prev)}
+                    >
                       <FiLogIn />
                     </Link>
-                    <Link to={"/fav"}>
+                    <Link
+                      to={"/fav"}
+                      onClick={() => setIsNavShowing((prev) => !prev)}
+                    >
                       <MdFavorite />
                     </Link>
                   </div>
