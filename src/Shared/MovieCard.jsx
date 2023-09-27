@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Style/movieCard.css";
 import { MdFavorite } from "react-icons/md";
 import { connect } from "react-redux";
-import { addToFavorites } from "../Actions/favoriteActions"; // Import your addToFavorites action
+import { addToFavorites } from "../Actions/favoriteActions";
 import { Link } from "react-router-dom";
 
 function MovieCard({ movie, favorites, addToFavorites,id }) {
