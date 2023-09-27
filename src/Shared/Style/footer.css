@@ -1,10 +1,10 @@
 footer {
+    margin-top: 7rem;
     padding: 5rem 3rem;
-    background-color: blueviolet;
-    -webkit-box-shadow: 0px -8px 47px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px -8px 47px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px -8px 47px 0px rgba(0, 0, 0, 0.75);
-    background-color: var(--main-bg);
+    -webkit-box-shadow: 0px -7px 81px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -7px 81px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -7px 81px 0px rgba(0, 0, 0, 0.75);
+    background-color: var(--second-bg);
 }
 
 footer .container {
@@ -20,13 +20,15 @@ footer .container {
         justify-content: center;
         align-items: center;
     }
-    footer .container >div:not(:last-child){
+
+    footer .container>div:not(:last-child) {
         margin-bottom: 1rem;
     }
 }
 
-footer .container .logo img{
-    width: 200px;margin-bottom: 1rem;
+footer .container .logo img {
+    width: 200px;
+    margin-bottom: 1rem;
 }
 
 footer .container a {
@@ -36,6 +38,8 @@ footer .container a {
     -moz-transition: var(--main-transition);
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
+    text-transform: capitalize;
+    margin-left: 0.5rem;
 }
 
 footer .container a:hover {
@@ -44,14 +48,12 @@ footer .container a:hover {
 
 }
 
-footer .container h4{
-    color:var(--hover-color);
+footer .container h4 {
+    color: var(--hover-color);
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 767px) {
-
-}
+@media only screen and (max-width: 767px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {}
