@@ -1,15 +1,15 @@
 import React from "react";
 import NowPlayingMovies from "../../Shared/NowPlaying.jsx";
-import Popular from "../../Shared/Popular";
-import TopRated from "../../Shared/TopRated";
-import UpComming from "../../Shared/upComming";
+import Popular from "../../Shared/Popular.jsx";
+import TopRated from "../../Shared/TopRated.js";
+import UpComming from "../../Shared/upComming.js";
 
 function Movies() {
   return (
     <div>
-      <NowPlayingMovies />
+      {/* <NowPlayingMovies />
       <Popular />
-      <TopRated />
+      <TopRated /> */}
       <UpComming />
     </div>
   );

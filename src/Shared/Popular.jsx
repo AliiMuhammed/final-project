@@ -12,12 +12,12 @@ function Popular({ popular, fetchPopular }) {
 
   return (
     <>
-      <section className="movieList-section">
+      <div className="movieList-section">
         <div className="container">
           <MainHeader title={"popular"} icon={<BsFire/>}/>
           <MovieList movies={popular.slice(0, 8)} />{" "}
         </div>
-      </section>
+      </div>
     </>
   );
 }

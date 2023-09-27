@@ -1,29 +1,3 @@
-// import React from "react";
-// import "./Style/movieCard.css";
-// import { MdFavorite } from "react-icons/md";
-// import { Link } from "react-router-dom";
-
-// function MovieCard({ movie }) {
-//   return (
-//     <>
-//       <Link to={"/home"} className="movie-card">
-//         <img
-//           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-//           alt=""
-//         />
-//         <div className="content-card">
-//           <h1>{movie.title}</h1>
-//           <button className="main-btn card-btn">
-//             <MdFavorite />
-//           </button>
-//         </div>
-//       </Link>
-//     </>
-//   );
-// }
-
-// export default MovieCard;
-
 import React, { useState } from "react";
 import "./Style/movieCard.css";
 import { MdFavorite } from "react-icons/md";
@@ -31,7 +5,7 @@ import { connect } from "react-redux";
 import { addToFavorites } from "../Actions/favoriteActions"; // Import your addToFavorites action
 import { Link } from "react-router-dom";
 
-function MovieCard({ movie, favorites, addToFavorites }) {
+function MovieCard({ movie, favorites, addToFavorites,id }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleAddToFavorites = () => {
@@ -47,11 +21,13 @@ function MovieCard({ movie, favorites, addToFavorites }) {
 
   return (
     <>
-      <Link className="movie-card">
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt=""
-        />
+      <div className="movie-card">
+        <Link to={`/movie/${id}`}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt=""
+          />
+        </Link>
         <div className="content-card">
           <h1>{movie.title}</h1>
           {isAlreadyFavorite ? (
@@ -67,7 +43,7 @@ function MovieCard({ movie, favorites, addToFavorites }) {
             </button>
           )}
         </div>
-      </Link>
+      </div>
     </>
   );
 }

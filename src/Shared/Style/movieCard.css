@@ -58,6 +58,11 @@
 .main-btn.card-btn {
     padding: 0.3rem 0.7rem;
 }
+.main-btn.card-btn:disabled {
+    background-color: #FFF;
+    color: var(--hover-color);
+    border-color: transparent;
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {

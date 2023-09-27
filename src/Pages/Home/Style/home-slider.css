@@ -1,0 +1,153 @@
+.mySwiper {
+    height: 50vh;
+    position: relative;
+    font-weight: 700;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .mySwiper {
+        height: 29vh;
+        position: relative;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .mySwiper {
+        height: 40vh;
+        position: relative;
+    }
+}
+
+.mySwiper .slider-content::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: #0000003d;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.mySwiper .slider-content {
+    height: 100%;
+    position: relative;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mySwiper .slider-content .title {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    .mySwiper .slider-content .title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .mySwiper .slider-content .title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+.mySwiper .slider-content .rate-date {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .mySwiper .slider-content .rate-date{
+        margin-bottom: 1rem;
+    }
+
+}
+
+.mySwiper .slider-content .rate-date .rate,
+.mySwiper .slider-content .rate-date .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.mySwiper .slider-content .rate-date .rate svg,
+.mySwiper .slider-content .rate-date .date svg {
+    color: var(--hover-color);
+    margin-right: 0.4rem;
+
+}
+
+.mySwiper .slider-content .btns .watch-btn {
+    margin-right: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .mySwiper .slider-content .btns .watch-btn {
+        margin-right: 1rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+}
+.mySwiper .slider-content .btns .fav-slider-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    background-color: #ffffff52;
+    border-color: transparent;
+}
+
+.mySwiper .slider-content .btns .fav-slider-btn:hover {
+    color: var(--hover-color);
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .mySwiper .slider-content {
+
+        padding: 2rem;
+
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .mySwiper .slider-content {
+
+        padding: 3rem;
+
+    }
+}
+
+.mySwiper .slider-content img {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -2
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {}

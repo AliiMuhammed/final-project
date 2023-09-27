@@ -2,9 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
-import Movie from "./Pages/Movie/movie";
+import Movies from "./Pages/Movies/Movies";
 import TvShow from "./Pages/TvShow/TvShow";
 import Favourite from "./Pages/Fav/Favourite";
+import Movie from "./Pages/Movie/Movie";
+
 export const router = createBrowserRouter([
   {
     path: "",
@@ -16,7 +18,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/movies",
-        element: <Movie />,
+        element: <Movies />,
       },
       {
         path: "/tvshows",
@@ -25,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/fav",
         element: <Favourite />,
+      },
+      {
+        path: "/movie/:id",
+        element: <Movie />,
       },
     ],
     errorElement: <NotFound />,

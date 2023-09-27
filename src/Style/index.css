@@ -1,12 +1,12 @@
 /* start variables */
 :root {
   --main-font-color: #FFF;
-  --second-font-color:  #4b5563;
+  --second-font-color: #4b5563;
   --hover-color: #f20000;
-  --main-bg:#080a1a;
-  --second-bg:#0b0f29;
+  --main-bg: #080a1a;
+  --second-bg: #0b0f29;
   --main-transition: all 0.3s ease-in-out;
-  --main-border-radius:5px;
+  --main-border-radius: 5px;
 }
 
 ::selection {
@@ -24,15 +24,17 @@
 }
 
 body {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  
-  background-color: var(--main-bg) ;
+  /* font-family: 'Barlow Semi Condensed', sans-serif; */
+
+  font-family: "Barlow Semi Condensed";
+
+  background-color: var(--main-bg);
   color: var(--main-font-color);
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 /* Media query for small screens  */
@@ -71,7 +73,7 @@ a {
 
 }
 
-.main-btn{
+.main-btn {
   background-color: var(--hover-color);
   border: 2px solid var(--hover-color);
   color: #ffff;
@@ -89,25 +91,25 @@ a {
   -o-border-radius: var(--main-border-radius);
 }
 
-.main-btn:hover{
+.main-btn:hover {
   background-color: transparent;
 }
 
-section{
-  margin: 10rem 0;
+section {
+  margin: 7rem 0;
 }
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
-  section{
+  section {
     margin: 8rem 0;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px)and (max-width: 992px) {
-  section{
-    margin: 9rem 0;
+  section {
+    margin: 8rem 0;
   }
 }
