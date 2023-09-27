@@ -3,10 +3,14 @@
   overflow-y: inherit;
 }
 
-.slide-movie {
+.slide-movie,
+.slide-movie .movie-card {
 
+  width: 100%;
   height: 100%;
 }
+
+
 
 .mySwiper.top-rated .swiper {
   width: 100%;
