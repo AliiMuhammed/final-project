@@ -5,7 +5,7 @@ function Home() {
     <>
       <section className="home-section">
         <div className="container">
-          
+          <h1>yassmin</h1>
         </div>
       </section>
     </>
