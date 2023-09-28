@@ -1,17 +1,24 @@
 import React from "react";
-import NowPlayingMovies from "../../Shared/NowPlaying.jsx";
-import Popular from "../../Shared/Popular.jsx";
-import TopRated from "../../Shared/TopRated.js";
-import UpComming from "../../Shared/upComming.js";
-
+import MainHeader from "../../Shared/Components/MainHeader.jsx";
+import MainHeading from "../../Shared/Components/MainHeading.jsx";
+import { BiSolidCategoryAlt } from "react-icons/bi";
+import CatCard from "./components/CatCard.jsx";
+import "./style/movies.css";
 function Movies() {
   return (
-    <div>
-      {/* <NowPlayingMovies />
-      <Popular />
-      <TopRated /> */}
-      <UpComming />
-    </div>
+    <>
+      <MainHeader header={"Movies"} />
+      <section className="movies-section">
+        <div className="container">
+          <MainHeading title={"categories"} icon={<BiSolidCategoryAlt />} />
+          <div className="movies-cat-cards">
+            <CatCard title={"popular movies"} link={"/movies/popular"} />
+            <CatCard title={"upcoming movies"} link={"/movies/upcoming"} />
+            <CatCard title={"top rated movies"} link={"/movies/top_rated"} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

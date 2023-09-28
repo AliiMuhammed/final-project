@@ -6,6 +6,9 @@ import Movies from "./Pages/Movies/Movies";
 import TvShow from "./Pages/TvShow/TvShow";
 import Favourite from "./Pages/Fav/Favourite";
 import Movie from "./Pages/Movie/Movie";
+import PopularMovies from "./Pages/Popular/PopularMovies";
+import UpcomingMovies from "./Pages/Upcoming/UpcomingMovies";
+import TopRatedMovies from "./Pages/Top rated/TopRatedMovies";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ export const router = createBrowserRouter([
       {
         path: "/movie/:id",
         element: <Movie />,
+      },
+      {
+        path: "/movies/popular",
+        element: <PopularMovies />,
+      },
+      {
+        path: "/movies/upcoming",
+        element: <UpcomingMovies />,
+      },
+      {
+        path: "/movies/top_rated",
+        element: <TopRatedMovies />,
       },
     ],
     errorElement: <NotFound />,

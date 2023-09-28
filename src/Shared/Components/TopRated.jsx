@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchTopRated } from "../Actions/movieActions";
+import { fetchTopRated } from "../../Actions/movieActions";
 import MovieList from "./MovieList";
 import MainHeader from "./MainHeader";
 import { BsFire } from "react-icons/bs";

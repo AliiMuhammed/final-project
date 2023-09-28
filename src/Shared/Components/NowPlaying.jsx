@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchNowPlaying } from "../Actions/movieActions";
+import { fetchNowPlaying } from "../../Actions/movieActions";
 import MovieList from "./MovieList";
 import MainHeader from "./MainHeader";
 import { BsFillCollectionPlayFill } from "react-icons/bs";

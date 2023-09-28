@@ -1,10 +1,8 @@
-
-
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchUpcoming } from "../Actions/movieActions";
+import { fetchUpcoming } from "../../Actions/movieActions";
 import MovieList from "./MovieList";
-import MainHeader from "./MainHeader";
+import MainHeader from "./MainHeading";
 import { BsFire } from "react-icons/bs";
 import Pagination from "react-bootstrap/Pagination";
 

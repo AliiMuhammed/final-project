@@ -1,9 +1,9 @@
 import React from "react";
 import "./Style/home.css";
 import HomeSlider from "./Components/HomeSlider";
-import Popular from "./../../Shared/Popular";
+import Popular from "../../Shared/Components/Popular";
 import phoneImg from "../../Assets/images/Home/mobile.png";
-import MoviesSllider from "../../Shared/MoviesSllider";
+import MoviesSllider from "../../Shared/Components/MoviesSllider";
 function Home() {
   return (
     <>
@@ -40,7 +40,7 @@ function Home() {
       </section>
       <section className="movies-slider">
         <div className="container">
-          <MoviesSllider/>
+          <MoviesSllider />
         </div>
       </section>
     </>

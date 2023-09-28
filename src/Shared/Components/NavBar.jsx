@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import logo from "../Assets/images/logo/logo.png";
-import { BsSearch } from "react-icons/bs";
+import logo from "../../Assets/images/logo/logo.png";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
 import { MdFavorite } from "react-icons/md";
 
 import { Link, NavLink } from "react-router-dom";
-import "./Style/navbar.css";
+import "../Style/navbar.css";
 function NavBar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
 
@@ -49,12 +48,6 @@ function NavBar() {
                 <img src={logo} alt="logo" />
               </Link>
             </div>
-            {/* <div className="search">
-              <input type="search" placeholder="Search Movie Name from here" name="query" id="search-input" />
-              <button className="main-btn search-btn">
-                <BsSearch />
-              </button>
-            </div> */}
             <div className="links">
               <ul
                 className={`nav-links ${

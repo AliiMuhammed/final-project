@@ -1,22 +1,20 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchAiringToday } from "../Actions/tvShowActions"; 
-import MovieList from "./MovieList"; 
-import {BsFire} from 'react-icons/bs'
-import MainHeader from "../Shared/MainHeader";
+import { fetchAiringToday } from "../../Actions/tvShowActions";
+import MovieList from "./MovieList";
+import { BsFire } from "react-icons/bs";
+import MainHeader from "./MainHeading";
 
 function AiringTodayTv({ airing, fetchAiringToday }) {
   useEffect(() => {
-    
     fetchAiringToday();
   }, [fetchAiringToday]);
 
   return (
     <>
-
-    <section className="movieList-section">
+      <section className="movieList-section">
         <div className="container">
-          <MainHeader title={"Airing Today TV Shows"} icon={<BsFire/>}/>
+          <MainHeader title={"Airing Today TV Shows"} icon={<BsFire />} />
           <MovieList movies={airing.slice(0, 8)} />
         </div>
       </section>
@@ -25,7 +23,7 @@ function AiringTodayTv({ airing, fetchAiringToday }) {
 }
 
 const mapStateToProps = (state) => ({
-  airing: state.tvShows.airingToday, 
+  airing: state.tvShows.airingToday,
 });
 
 export default connect(mapStateToProps, { fetchAiringToday })(AiringTodayTv);
