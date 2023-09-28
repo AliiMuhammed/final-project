@@ -21,11 +21,11 @@ function NavBar() {
       name: "Movies",
       path: "/movies",
     },
-    {
-      id: 3,
-      name: "TV shows",
-      path: "/tvshows",
-    },
+    // {
+    //   id: 3,
+    //   name: "TV shows",
+    //   path: "/tvshows",
+    // },
     {
       id: 4,
       name: "About Us",

@@ -19,19 +19,16 @@ function Footer() {
           <h4>Fast links</h4>
           <ul>
             <li>
-              <Link to={""}>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={""}>movies</Link>
+              <Link to={"/movies"}>movies</Link>
             </li>
             <li>
-              <Link to={""}>tv shows</Link>
+              <Link to={"/about"}>about us</Link>
             </li>
             <li>
-              <Link to={""}>about us</Link>
-            </li>
-            <li>
-              <Link to={""}>contact us</Link>
+              <Link to={"/contactUs"}>contact us</Link>
             </li>
           </ul>
         </div>
