@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-import NavBar from "./Shared/NavBar";
-import Footer from "./Shared/Footer";
+import NavBar from "./Shared/Components/NavBar";
+import Footer from "./Shared/Components/Footer";
 import { Provider } from "react-redux";
 import store from "./store";
 

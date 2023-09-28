@@ -1,7 +1,7 @@
 // MovieList.js
 import React from "react";
 import MovieCard from "./MovieCard";
-import "./Style/movieList.css";
+import "../Style/movieList.css";
 function MovieList({ movies }) {
   return (
     <>

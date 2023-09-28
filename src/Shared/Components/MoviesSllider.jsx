@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchTopRated } from "../Actions/movieActions";
+import { fetchTopRated } from "../../Actions/movieActions";
 
-import MainHeader from "./MainHeader";
+import MainHeader from "./MainHeading";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "./Style/movieSlider.css";
+import "../Style/movieSlider.css";
 import MovieCard from "./MovieCard";
 function MoviesSllider({ topRated, fetchTopRated }) {
   useEffect(() => {

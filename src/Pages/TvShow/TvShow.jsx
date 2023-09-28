@@ -1,12 +1,11 @@
 import React from "react";
-import AiringTodayTv from "../../Shared/AiringTodayTv";
+import AiringTodayTv from "../../Shared/Components/AiringTodayTv";
 
 function TvShow() {
   return (
     <div>
       <AiringTodayTv />
     </div>
-    
   );
 }
 

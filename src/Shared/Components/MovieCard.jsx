@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Style/movieCard.css";
+import "../Style/movieCard.css";
 import { MdFavorite } from "react-icons/md";
 import { connect } from "react-redux";
-import { addToFavorites } from "../Actions/favoriteActions";
+import { addToFavorites } from "../../Actions/favoriteActions";
 import { Link } from "react-router-dom";
 
 function MovieCard({ movie, favorites, addToFavorites,id }) {
@@ -22,7 +22,7 @@ function MovieCard({ movie, favorites, addToFavorites,id }) {
   return (
     <>
       <div className="movie-card">
-        <Link to={`/movie/${id}`} target="_blank">
+        <Link to={`/movie/${id}`}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt=""
