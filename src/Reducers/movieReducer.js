@@ -3,13 +3,15 @@ import {
   FETCH_POPULAR,
   FETCH_TOP_RATED,
   FETCH_UPCOMING,
-} from '../Actions/movieActions';
+  FETCH_SEARCH,
+} from "../Actions/movieActions";
 
 const initialState = {
   nowPlaying: [],
   popular: [],
   topRated: [],
   upcoming: [],
+  search: [],
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -22,6 +24,8 @@ const movieReducer = (state = initialState, action) => {
       return { ...state, topRated: action.payload };
     case FETCH_UPCOMING:
       return { ...state, upcoming: action.payload };
+    case FETCH_SEARCH:
+      return { ...state, search: action.payload };
     default:
       return state;
   }

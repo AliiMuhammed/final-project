@@ -1,0 +1,83 @@
+.about-us-section p {
+    color: var(--main-p-color);
+}
+
+.about-us-section .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .about-us-section .container {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .about-us-section .container {
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.about-us-section .container .right {
+    width: 100%;
+    background-image: url(../../../Assets/images/about/about2.jpg);
+    background-size: cover;
+    background-position: 50%;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+.about-us-section .container .right:hover{
+   
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+.about-us-section .container .left {
+    padding: 1rem;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .about-us-section .container .left {
+        padding: 0rem;
+    }
+}
+
+.about-us-section .container .left h1,
+.about-us-section .container .left h3 {
+    font-weight: 700;
+}
+
+.about-us-section .container .left .numbers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .about-us-section .container .left .numbers {
+
+        grid-template-columns:  1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+}
+.about-us-section .container .left .numbers .number-card {
+    background-color: var(--second-bg);
+    padding: 1rem 1.5rem;
+}

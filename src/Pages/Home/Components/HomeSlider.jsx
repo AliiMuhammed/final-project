@@ -52,7 +52,12 @@ function HomeSlider({ nowPlaying, fetchNowPlaying }) {
                   </div>
                 </div>
                 <div className="btns">
-                  <Link  to={`/movie/${movie.id}`} className="main-btn watch-btn">Watch</Link>
+                  <Link
+                    to={`/movie/${movie.id}`}
+                    className="main-btn watch-btn"
+                  >
+                    Watch
+                  </Link>
                   <button className="main-btn fav-slider-btn">
                     <MdFavorite />
                   </button>

@@ -1,0 +1,56 @@
+.contact-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-section .container .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.contact-section .container .contact-cards .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--second-bg);
+    border: 1px solid #fff6;
+    border-radius: var(--main-border-radius);
+    -webkit-border-radius: var(--main-border-radius);
+    -moz-border-radius: var(--main-border-radius);
+    -ms-border-radius: var(--main-border-radius);
+    -o-border-radius: var(--main-border-radius);
+}
+
+.contact-section .container .contact-cards .contact-card a {
+    margin-right: 5px;
+}
+
+.contact-card .icon {
+    background-color: var(--main-bg);
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hover-color);
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    text-transform: capitalize;
+}
+
+.contact-card p {
+    color: var(--main-p-color);
+}

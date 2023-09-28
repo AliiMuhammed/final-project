@@ -3,7 +3,6 @@ import MainHeader from "../../Shared/Components/MainHeader";
 import Pagination from "react-bootstrap/Pagination";
 import MovieList from "../../Shared/Components/MovieList";
 import { connect } from "react-redux";
-import { BsSearch } from "react-icons/bs";
 import { fetchUpcoming } from "../../Actions/movieActions";
 import "./style/upcoming.css";
 
@@ -52,17 +51,6 @@ function UpcomingMovies({ upcoming, fetchUpcoming }) {
   return (
     <>
       <MainHeader header={"Upcoming movies"} />
-      <div className="search container">
-        <input
-          type="search"
-          placeholder="Search Movie Name from here"
-          name="query"
-          id="search-input"
-        />
-        <button className="main-btn search-btn">
-          <BsSearch />
-        </button>
-      </div>
       <section className="upcoming-Movies">
         <div className="container">
           <MovieList movies={upcoming} />
