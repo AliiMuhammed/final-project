@@ -2,7 +2,7 @@
 :root {
   --main-font-color: #FFF;
   --second-font-color: #4b5563;
-  --main-p-color:#c0c0c0;
+  --main-p-color: #c0c0c0;
   --hover-color: #f20000;
   --main-bg: #080a1a;
   --second-bg: #0b0f29;
@@ -113,4 +113,37 @@ section {
   section {
     margin: 8rem 0;
   }
+}
+
+.scroll-btn {
+  background-color: #f20000 !important;
+}
+
+.pagination-color a {
+  color: var(--hover-color) !important;
+}
+
+
+.search {
+  display: flex;
+}
+
+.search input {
+  background-color: #e0d5d5;
+  outline: none;
+  border: 2px solid #e0d5d5;
+  padding: 0.5rem;
+  border-radius: var(--main-border-radius);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex-grow: 2;
+}
+
+.search .main-btn.search-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+
 }

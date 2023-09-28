@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../../Assets/images/logo/logo.png";
-import { BsSearch } from "react-icons/bs";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
@@ -49,15 +48,7 @@ function NavBar() {
                 <img src={logo} alt="logo" />
               </Link>
             </div>
-            {/* <div className="search">
-              <input type="search" placeholder="Search Movie Name from here" name="query" id="search-input" />
-              <button className="main-btn search-btn">
-                <BsSearch />
-              </button>
-            </div> */}
             <div className="links">
-    
-
               <ul
                 className={`nav-links ${
                   isNavShowing ? "show-nav" : "hide-nav"
@@ -83,10 +74,16 @@ function NavBar() {
                 })}
                 <li>
                   <div className="icons">
-                    <Link to={"/login"} onClick={() => setIsNavShowing((prev) => !prev)}>
+                    <Link
+                      to={"/login"}
+                      onClick={() => setIsNavShowing((prev) => !prev)}
+                    >
                       <FiLogIn />
                     </Link>
-                    <Link to={"/fav"} onClick={() => setIsNavShowing((prev) => !prev)}>
+                    <Link
+                      to={"/fav"}
+                      onClick={() => setIsNavShowing((prev) => !prev)}
+                    >
                       <MdFavorite />
                     </Link>
                   </div>
