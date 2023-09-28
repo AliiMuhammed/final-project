@@ -5,8 +5,9 @@ import MovieList from "../../Shared/Components/MovieList";
 import { fetchPopular } from "../../Actions/movieActions";
 import { connect } from "react-redux";
 import { BsSearch } from "react-icons/bs";
-
 import "./style/popularMovies.css";
+
+
 function PopularMovies({ popular, fetchPopular }) {
   const [page, setPage] = useState(1);
 
