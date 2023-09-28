@@ -8,26 +8,36 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import {  useSelector } from "react-redux";
+
 
 const Movie = () => {
   const key = "4aa3fd8db30994a6860649f1e8d70cd6";
   const imagePath = "https://image.tmdb.org/t/p/w500";
   let { id } = useParams();
   const [movie, setMovie] = useState({});
+  const language = useSelector((state) => state.language);
 
   useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/${id}`, {
-        params: {
-          api_key: key,
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/${id}`,
+          {
+            params: {
+              api_key: key,
+              language: language, 
+            },
+          }
+        );
         setMovie(response.data);
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchMovieDetails();
+  }, [id, language]);
 
   return (
     <section

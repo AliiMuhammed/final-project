@@ -9,7 +9,11 @@ export const FETCH_TOP_RATED = "FETCH_TOP_RATED";
 export const FETCH_UPCOMING = "FETCH_UPCOMING";
 export const FETCH_SEARCH = "FETCH_SEARCH";
 
-export const fetchNowPlaying = (page, language) => async (dispatch) => {
+
+
+export const fetchNowPlaying = (page) => async (dispatch, getState) => {
+  const { language } = getState();
+
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/now_playing`,
@@ -17,7 +21,7 @@ export const fetchNowPlaying = (page, language) => async (dispatch) => {
         params: {
           api_key: API_KEY,
           page: page,
-          language: language, // Include language preference in the request
+          language,
         },
       }
     );
@@ -27,7 +31,9 @@ export const fetchNowPlaying = (page, language) => async (dispatch) => {
   }
 };
 
-export const fetchPopular = (page, language) => async (dispatch) => {
+export const fetchPopular = (page) => async (dispatch, getState) => {
+  const { language } = getState(); 
+
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/popular`,
@@ -35,7 +41,7 @@ export const fetchPopular = (page, language) => async (dispatch) => {
         params: {
           api_key: API_KEY,
           page: page,
-          language: language, // Include language preference in the request
+          language,
         },
       }
     );
@@ -45,7 +51,9 @@ export const fetchPopular = (page, language) => async (dispatch) => {
   }
 };
 
-export const fetchTopRated = (page, language) => async (dispatch) => {
+export const fetchTopRated = (page) => async (dispatch, getState) => {
+  const { language } = getState(); 
+
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/top_rated`,
@@ -53,7 +61,7 @@ export const fetchTopRated = (page, language) => async (dispatch) => {
         params: {
           api_key: API_KEY,
           page: page,
-          language: language, // Include language preference in the request
+          language,
         },
       }
     );
@@ -63,7 +71,9 @@ export const fetchTopRated = (page, language) => async (dispatch) => {
   }
 };
 
-export const fetchUpcoming = (page, language) => async (dispatch) => {
+export const fetchUpcoming = (page) => async (dispatch, getState) => {
+  const { language } = getState();
+
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/upcoming`,
@@ -71,7 +81,7 @@ export const fetchUpcoming = (page, language) => async (dispatch) => {
         params: {
           api_key: API_KEY,
           page: page,
-          language: language, // Include language preference in the request
+          language,
         },
       }
     );
@@ -81,7 +91,9 @@ export const fetchUpcoming = (page, language) => async (dispatch) => {
   }
 };
 
-export const fetchSearch = (page, query) => async (dispatch) => {
+export const fetchSearch = (page, query) => async (dispatch, getState) => {
+  const { language } = getState(); 
+
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/search/movie`,
@@ -90,11 +102,12 @@ export const fetchSearch = (page, query) => async (dispatch) => {
           api_key: API_KEY,
           page: page,
           query: query,
+          language, 
         },
       }
     );
     dispatch({
-      type: FETCH_SEARCH, // Use the correct action type for search results
+      type: FETCH_SEARCH,
       payload: response.data.results,
     });
   } catch (error) {
@@ -102,17 +115,11 @@ export const fetchSearch = (page, query) => async (dispatch) => {
   }
 };
 
-
-// Action to update APIs after changing the language
 export const updateApisAfterLanguageChange =
   (page, language) => async (dispatch) => {
-    dispatch(setLanguage(language)); // Update the language preference in the Redux store
-
-    // Fetch data from APIs with the new language preference
+    dispatch(setLanguage(language));
     dispatch(fetchNowPlaying(page, language));
     dispatch(fetchPopular(page, language));
     dispatch(fetchTopRated(page, language));
     dispatch(fetchUpcoming(page, language));
   };
-
-
