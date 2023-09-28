@@ -8,6 +8,7 @@ import "../Style/home-slider.css";
 import { MdFavorite } from "react-icons/md";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 function HomeSlider({ nowPlaying, fetchNowPlaying }) {
   useEffect(() => {
     fetchNowPlaying();
@@ -51,7 +52,7 @@ function HomeSlider({ nowPlaying, fetchNowPlaying }) {
                   </div>
                 </div>
                 <div className="btns">
-                  <button className="main-btn watch-btn">Watch</button>
+                  <Link  to={`/movie/${movie.id}`} className="main-btn watch-btn">Watch</Link>
                   <button className="main-btn fav-slider-btn">
                     <MdFavorite />
                   </button>
