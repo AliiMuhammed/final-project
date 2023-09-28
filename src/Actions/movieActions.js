@@ -20,10 +20,16 @@ export const fetchNowPlaying = () => async (dispatch) => {
   }
 };
 
-export const fetchPopular = () => async (dispatch) => {
+export const fetchPopular = (page) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+      `https://api.themoviedb.org/3/movie/popular`,
+      {
+        params: {
+          api_key: API_KEY,
+          page: page,
+        },
+      }
     );
     dispatch({ type: FETCH_POPULAR, payload: response.data.results });
   } catch (error) {
@@ -31,10 +37,16 @@ export const fetchPopular = () => async (dispatch) => {
   }
 };
 
-export const fetchTopRated = () => async (dispatch) => {
+export const fetchTopRated = (page) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`
+      `https://api.themoviedb.org/3/movie/top_rated`,
+      {
+        params: {
+          api_key: API_KEY,
+          page: page,
+        },
+      }
     );
     dispatch({ type: FETCH_TOP_RATED, payload: response.data.results });
   } catch (error) {
