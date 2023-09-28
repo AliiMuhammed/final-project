@@ -4,7 +4,6 @@ import Pagination from "react-bootstrap/Pagination";
 import MovieList from "../../Shared/Components/MovieList";
 import { fetchPopular } from "../../Actions/movieActions";
 import { connect } from "react-redux";
-import { BsSearch } from "react-icons/bs";
 import "./style/popularMovies.css";
 
 
@@ -53,17 +52,6 @@ function PopularMovies({ popular, fetchPopular }) {
   return (
     <>
       <MainHeader header={"popular movies"} />
-      <div className="search container">
-        <input
-          type="search"
-          placeholder="Search Movie Name from here"
-          name="query"
-          id="search-input"
-        />
-        <button className="main-btn search-btn">
-          <BsSearch />
-        </button>
-      </div>
       <section className="popular-Movies">
         <div className="container">
           <MovieList movies={popular} />
@@ -90,7 +78,7 @@ function PopularMovies({ popular, fetchPopular }) {
           />
         </Pagination>
       </div>
-    </>
+    </  >
   );
 }
 const mapStateToProps = (state) => ({
