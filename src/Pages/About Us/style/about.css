@@ -28,7 +28,7 @@
 
 .about-us-section .container .right {
     width: 100%;
-    background-image: url(../../../Assets/images/Header/banner.jpg);
+    background-image: url(../../../Assets/images/about/about2.jpg);
     background-size: cover;
     background-position: 50%;
     transition: var(--main-transition);

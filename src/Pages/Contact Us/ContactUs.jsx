@@ -1,7 +1,9 @@
 import React from "react";
 import "./style/countactUs.css";
 import MainHeader from "../../Shared/Components/MainHeader";
-import { BsFire } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function ContactUs() {
@@ -13,7 +15,7 @@ function ContactUs() {
           <div className="contact-cards">
             <div className="contact-card">
               <div className="icon">
-                <BsFire />
+                <MdEmail />
               </div>
               <h3>Email us</h3>
               <p>
@@ -25,7 +27,7 @@ function ContactUs() {
             </div>
             <div className="contact-card">
               <div className="icon">
-                <BsFire />
+                <BsFillTelephoneFill />
               </div>
               <h3>Call Us</h3>
               <p>
@@ -38,7 +40,7 @@ function ContactUs() {
             </div>
             <div className="contact-card">
               <div className="icon">
-                <BsFire />
+                <FaLocationDot />
               </div>
               <h3>Location</h3>
               <p>
