@@ -4,11 +4,11 @@ import MainHeading from "../../Shared/Components/MainHeading.jsx";
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import CatCard from "./components/CatCard.jsx";
 import "./style/movies.css";
-import { BsSearch } from "react-icons/bs";
 import Pagination from "react-bootstrap/Pagination";
 import { fetchSearch } from "../../Actions/movieActions.js";
 import MovieCard from "../../Shared/Components/MovieCard.jsx";
 import { connect } from "react-redux";
+import Alert from "react-bootstrap/Alert";
 
 function Movies({ search, fetchSearch }) {
   const [page, setPage] = useState(1);
@@ -64,7 +64,7 @@ function Movies({ search, fetchSearch }) {
       <>
         <div className="search-res">
           {search.map((movie) => {
-            return <MovieCard movie={movie} id={movie.id} />;
+            return <MovieCard movie={movie} key={movie.id} id={movie.id} />;
           })}
         </div>
         <div className="Pagination-movies">
@@ -113,12 +113,18 @@ function Movies({ search, fetchSearch }) {
           onBlur={handleSearchInputBlur}
           id="search-input"
         />
-
-
       </div>
 
       <section className="movies-section">
         <div className="container">
+          {search.length === 0 && query.trim() !== "" && (
+            <div className="alert">
+              <Alert variant="primary" className="alert-primary">
+                {`There are no movies called "${query}"`}
+              </Alert>
+            </div>
+          )}
+
           {search.length === 0 && (
             <>
               <MainHeading title={"categories"} icon={<BiSolidCategoryAlt />} />
@@ -132,6 +138,7 @@ function Movies({ search, fetchSearch }) {
               </div>
             </>
           )}
+
           {search.length !== 0 && search.length > 0 && displayMovies()}
         </div>
       </section>
