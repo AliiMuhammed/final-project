@@ -7,6 +7,7 @@ import { MdFavorite } from "react-icons/md";
 
 import { Link, NavLink } from "react-router-dom";
 import "../Style/navbar.css";
+import ToggleLanguge from "./ToggleLanguge";
 function NavBar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
 
@@ -97,6 +98,7 @@ function NavBar() {
             >
               {isNavShowing ? <AiFillCloseSquare /> : <FaBars />}
             </button>
+            <ToggleLanguge />
           </div>
         </nav>
       </header>
