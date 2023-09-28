@@ -46,3 +46,11 @@
     color: var(--hover-color);
     margin-bottom: 1rem;
 }
+
+.contact-card h3 {
+    text-transform: capitalize;
+}
+
+.contact-card p {
+    color: var(--main-p-color);
+}
