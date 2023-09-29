@@ -1,6 +1,7 @@
 .tags-container {
-  margin-top: 120px;
+  margin-top: -100px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .tags {
