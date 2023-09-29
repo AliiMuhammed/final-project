@@ -4,7 +4,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
 import Movies from "./Pages/Movies/Movies";
 // import TvShow from "./Pages/TvShow/TvShow";
-import Favourite from "./Pages/Fav/Favourite";
+import Profile from "./Pages/User Profile/Profile";
 import Movie from "./Pages/Movie/Movie";
 import PopularMovies from "./Pages/Popular/PopularMovies";
 import UpcomingMovies from "./Pages/Upcoming/UpcomingMovies";
@@ -14,7 +14,8 @@ import ContactUs from "./Pages/Contact Us/ContactUs";
 import Custom from "./Pages/Custom/Custom";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
-
+import Guest from "./Middleware/Guest";
+import GuestProfile from "./Middleware/GuestProfile";
 
 export const router = createBrowserRouter([
   {
@@ -42,16 +43,26 @@ export const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/fav",
-        element: <Favourite />,
+        element: <GuestProfile />,
+        children: [
+          {
+            path: "/profile/:name",
+            element: <Profile/>,
+          },
+        ],
       },
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signUp",
-        element: <SignUp />,
+        element: <Guest />,
+        children: [
+          {
+            path: "/login",
+            element: <Login />,
+          },
+          {
+            path: "/signUp",
+            element: <SignUp />,
+          },
+        ],
       },
       {
         path: "/movie/:id",

@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import logo from "../../Assets/images/logo/logo.png";
+import ToggleLanguge from "./ToggleLanguge";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { FaBars } from "react-icons/fa";
-import { FiLogIn } from "react-icons/fi";
-import { MdFavorite } from "react-icons/md";
+import { HiOutlineLogout, HiOutlineLogin } from "react-icons/hi";
+import { FaUserCircle } from "react-icons/fa";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { getAuthUser, removeAuthUser } from "../../Helper/Storage";
 
-import { Link, NavLink } from "react-router-dom";
 import "../Style/navbar.css";
-import ToggleLanguge from "./ToggleLanguge";
+
 function NavBar() {
   const [isNavShowing, setIsNavShowing] = useState(false);
+  const navigate = useNavigate();
+  const auth = getAuthUser();
 
+  const LogOut = () => {
+    removeAuthUser();
+    navigate("/");
+  };
   const links = [
     {
       id: 1,
@@ -76,26 +84,46 @@ function NavBar() {
                 <li>
                   <ToggleLanguge fun={setIsNavShowing} />
                 </li>
+                {/* Authenticated Routes */}
                 <li>
                   <div className="icons">
-                    <NavLink
-                      to={"/login"}
-                      onClick={() => setIsNavShowing((prev) => !prev)}
-                      className={({ isActive }) =>
-                        isActive ? "active-nav" : ""
-                      }
-                    >
-                      <FiLogIn />
-                    </NavLink>
-                    <NavLink
-                      to={"/fav"}
-                      onClick={() => setIsNavShowing((prev) => !prev)}
-                      className={({ isActive }) =>
-                        isActive ? "active-nav" : ""
-                      }
-                    >
-                      <MdFavorite />
-                    </NavLink>
+                    {auth && (
+                      <>
+                        <NavLink
+                          title="logout"
+                          className={"login-btn bordered-btn nav-btn  "}
+                          onClick={() => {
+                            setIsNavShowing((prev) => !prev);
+                            LogOut();
+                          }}
+                          to={"/"}
+                        >
+                          <HiOutlineLogout />
+                        </NavLink>
+                        <NavLink
+                          to={`/profile/${auth.uname}`}
+                          onClick={() => setIsNavShowing((prev) => !prev)}
+                          className={({ isActive }) =>
+                            isActive ? "active-nav" : ""
+                          }
+                        >
+                          <FaUserCircle />
+                        </NavLink>
+                      </>
+                    )}
+                    {/* unAuthenticated Routes */}
+                    {!auth && (
+                      <NavLink
+                        title="login"
+                        to={"/login"}
+                        onClick={() => setIsNavShowing((prev) => !prev)}
+                        className={({ isActive }) =>
+                          isActive ? "active-nav" : ""
+                        }
+                      >
+                        <HiOutlineLogin />
+                      </NavLink>
+                    )}
                   </div>
                 </li>
               </ul>

@@ -3,16 +3,16 @@ import logo from "../../../Assets/images/logo/logo.png";
 import { Link } from "react-router-dom";
 import { handleForm } from "./ValideteSignUpForm";
 
-
 function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [allUsersData, setAllUsersData] = useState([]);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
   const handleSubmit = (e) => {
-    handleForm(e, setAllUsersData, allUsersData);
+    handleForm(e, setAllUsersData, allUsersData, setSuccessMessage);
   };
 
   return (
@@ -21,6 +21,9 @@ function SignUpForm() {
         <div className="logo">
           <img src={logo} alt="" />
         </div>
+        <p className="success-msg" style={{ textAlign: "center" }}>
+          {successMessage}
+        </p>
         <input
           type="text"
           name="userName"
