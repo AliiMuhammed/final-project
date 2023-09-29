@@ -45,7 +45,7 @@ function Custom() {
       .catch((error) => {
         console.error("Error fetching movies data:", error);
       });
-  }, [language, selectedGenres]); 
+  }, [language, selectedGenres]);
   const toggleGenre = (genreId) => {
     if (selectedGenres.includes(genreId)) {
       setSelectedGenres(selectedGenres.filter((id) => id !== genreId));
