@@ -1,0 +1,167 @@
+.Form {
+    padding: 3rem;
+    background-color: var(--second-bg);
+    width: 50%;
+    border: 1px solid #fff6;
+    border-radius: var(--main-border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .Form {
+        width: 90%;
+        padding: 2.5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px)and (max-width: 992px) {
+    .Form {
+        width: 85%;
+        padding: 3rem;
+    }
+}
+
+.Form .logo {
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    .Form .logo {
+        margin-bottom: 3rem;
+
+    }
+
+    .Form .logo img {
+        width: 100%;
+
+    }
+}
+
+.Form input:not(input[type="submit"]) {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color: var(--main-bg);
+    outline: none;
+    border: 1px solid #fff6;
+    border-radius: var(--main-border-radius);
+    -webkit-border-radius: var(--main-border-radius);
+    -moz-border-radius: var(--main-border-radius);
+    -ms-border-radius: var(--main-border-radius);
+    -o-border-radius: var(--main-border-radius);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    color: #fff;
+}
+
+.Form input[type="submit"] {
+    margin-bottom: 2rem;
+}
+
+.Form input:not(:last-child):focus {
+    border: 1px solid var(--hover-color);
+}
+
+.show-pass {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.2rem;
+}
+
+.show-pass input[type="checkbox"] {
+    margin-bottom: 0 !important;
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.show-pass input[type="checkbox"]:checked {
+    accent-color: var(--hover-color);
+}
+
+.Form h5 {
+    width: 100%;
+    text-align: center;
+    color: #fff6;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    .Form h5 {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+.Form h5 a {
+    color: #fff;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    margin-left: 0.5rem;
+}
+
+.Form h5 a:hover {
+    color: var(--hover-color);
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    section {
+        margin: 8rem 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px)and (max-width: 992px) {
+    section {
+        margin: 8rem 0;
+    }
+}
+
+.error-msg {
+    padding-left: 1rem;
+    margin-bottom: 0.8rem;
+    color: var(--hover-color);
+}
+
+.Form input[type="file"] {
+    color: rgb(117, 117, 117) !important;
+}
+
+.Form input[type="file" i]::-webkit-file-upload-button {
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--hover-color);
+    color: #fff !important;
+    background-color: var(--hover-color);
+    margin-right: 1rem;
+    border-radius: var(--main-border-radius);
+    -webkit-border-radius: var(--main-border-radius);
+    -moz-border-radius: var(--main-border-radius);
+    -ms-border-radius: var(--main-border-radius);
+    -o-border-radius: var(--main-border-radius);
+    cursor: pointer;
+}

@@ -95,7 +95,6 @@ function Movies({ search, fetchSearch }) {
   const handleSearchInputKeyDown = (e) => {
     if (e.key === "Enter") {
       fetchSearch(page, query);
-      console.log(search);
       scrollToTop();
     }
   };
@@ -119,7 +118,7 @@ function Movies({ search, fetchSearch }) {
         <div className="container">
           {search.length === 0 && query.trim() !== "" && (
             <div className="alert">
-              <Alert variant="primary" className="alert-primary">
+              <Alert variant="danger" className="alert-primary">
                 {`There are no movies called "${query}"`}
               </Alert>
             </div>
