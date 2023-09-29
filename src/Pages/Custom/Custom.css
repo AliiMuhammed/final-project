@@ -1,0 +1,29 @@
+.tags-container {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.tag {
+  background-color: var(--hover-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: orange;
+}

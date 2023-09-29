@@ -11,8 +11,10 @@ import UpcomingMovies from "./Pages/Upcoming/UpcomingMovies";
 import TopRatedMovies from "./Pages/Top rated/TopRatedMovies";
 import AboutUs from "./Pages/About Us/AboutUs";
 import ContactUs from "./Pages/Contact Us/ContactUs";
+import Custom from "./Pages/Custom/Custom";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
+
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: "/movies/top_rated",
         element: <TopRatedMovies />,
+      },
+      {
+        path: "/custom",
+        element: <Custom />,
       },
     ],
     errorElement: <NotFound />,
