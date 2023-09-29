@@ -11,6 +11,8 @@ import UpcomingMovies from "./Pages/Upcoming/UpcomingMovies";
 import TopRatedMovies from "./Pages/Top rated/TopRatedMovies";
 import AboutUs from "./Pages/About Us/AboutUs";
 import ContactUs from "./Pages/Contact Us/ContactUs";
+import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/SignUp/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "/fav",
         element: <Favourite />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp />,
       },
       {
         path: "/movie/:id",

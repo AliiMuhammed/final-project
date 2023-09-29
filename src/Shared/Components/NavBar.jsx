@@ -78,18 +78,24 @@ function NavBar() {
                 </li>
                 <li>
                   <div className="icons">
-                    <Link
+                    <NavLink
                       to={"/login"}
                       onClick={() => setIsNavShowing((prev) => !prev)}
+                      className={({ isActive }) =>
+                        isActive ? "active-nav" : ""
+                      }
                     >
                       <FiLogIn />
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to={"/fav"}
                       onClick={() => setIsNavShowing((prev) => !prev)}
+                      className={({ isActive }) =>
+                        isActive ? "active-nav" : ""
+                      }
                     >
                       <MdFavorite />
-                    </Link>
+                    </NavLink>
                   </div>
                 </li>
               </ul>
