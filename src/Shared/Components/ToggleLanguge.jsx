@@ -29,7 +29,7 @@ function LanguageToggle({ fun }) {
   return (
     <div>
       <button className="main-btn lang-btn" onClick={handelOnClick}>
-        {language === "en-US" ? `English` : `Arabic`}
+        {language === "en-US" ? `English` : `العربية`}
       </button>
     </div>
   );
