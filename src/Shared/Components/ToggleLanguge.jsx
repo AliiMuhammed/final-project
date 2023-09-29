@@ -8,7 +8,7 @@ import {
   fetchPopular,
 } from "../../Actions/movieActions";
 
-function LanguageToggle() {
+function LanguageToggle({ fun }) {
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language);
 
@@ -22,9 +22,13 @@ function LanguageToggle() {
     dispatch(fetchUpcoming(1, newLanguage));
   };
 
+  const handelOnClick = () => {
+    fun((prev) => !prev);
+    toggleLanguage();
+  };
   return (
     <div>
-      <button onClick={toggleLanguage}>
+      <button className="main-btn lang-btn" onClick={handelOnClick}>
         {language === "en-US" ? `English` : `Arabic`}
       </button>
     </div>

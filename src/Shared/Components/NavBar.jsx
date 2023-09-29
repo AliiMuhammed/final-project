@@ -74,6 +74,9 @@ function NavBar() {
                   );
                 })}
                 <li>
+                  <ToggleLanguge fun={setIsNavShowing} />
+                </li>
+                <li>
                   <div className="icons">
                     <Link
                       to={"/login"}
@@ -98,7 +101,6 @@ function NavBar() {
             >
               {isNavShowing ? <AiFillCloseSquare /> : <FaBars />}
             </button>
-            <ToggleLanguge />
           </div>
         </nav>
       </header>

@@ -178,7 +178,6 @@ nav .container .icons a svg {
         opacity: 0;
         transform-origin: top;
         background-color: var(--hover-color);
-        justify-content: center;
         display: flex;
         align-items: center;
     }

@@ -9,7 +9,20 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
-
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .contact-section .container .contact-cards {
+        
+        grid-template-columns: 1fr;
+        
+    }
+  }
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 768px)and (max-width: 992px) {
+    .contact-section .container .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
 .contact-section .container .contact-cards .contact-card {
     display: flex;
     align-items: center;
@@ -25,7 +38,12 @@
     -ms-border-radius: var(--main-border-radius);
     -o-border-radius: var(--main-border-radius);
 }
-
+@media only screen and (max-width: 767px) {
+    .contact-section .container .contact-cards .contact-card{
+        width: 85%; 
+        margin: 0 auto;
+    }
+  }
 .contact-section .container .contact-cards .contact-card a {
     margin-right: 5px;
 }
