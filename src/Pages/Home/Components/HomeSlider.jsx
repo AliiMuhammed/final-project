@@ -50,7 +50,6 @@ function HomeSlider({
     setAuth(user); // Set the auth variable with the user data
   }, [auth]); // Use an empty dependency array to fetch user data only once
 
-
   return (
     <>
       <Swiper

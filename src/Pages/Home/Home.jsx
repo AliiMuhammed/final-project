@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Style/home.css";
 import HomeSlider from "./Components/HomeSlider";
 import Popular from "../../Shared/Components/Popular";
 import phoneImg from "../../Assets/images/Home/mobile.png";
 import MoviesSllider from "../../Shared/Components/MoviesSllider";
-import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
+import { useSelector } from "react-redux"; 
 
 function Home() {
-  const language = useSelector((state) => state.language); // Get the language from the Redux store
+  const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
+  const languages = ["en", "ar-KSA"]; 
+  const language = useSelector((state) => state.language); 
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentLanguageIndex(
+        (prevIndex) => (prevIndex + 1) % languages.length
+      );
+    }, 1000); 
+
+    return () => clearInterval(intervalId); 
+  }, []);
 
   return (
     <>
@@ -24,7 +36,7 @@ function Home() {
       <section className="download">
         <div className="container">
           <div className="left">
-            {language === "ar-KSA" ? (
+            {language === languages[currentLanguageIndex] ? (
               <>
                 <h1>قم بتنزيل أفلامك وشاهدها دون اتصال.</h1>
                 <h2> استمتع على هاتفك المحمول.</h2>
@@ -72,3 +84,4 @@ function Home() {
 }
 
 export default Home;
+
