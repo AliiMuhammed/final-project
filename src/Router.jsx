@@ -3,7 +3,6 @@ import App from "./App";
 import NotFound from "./Pages/NotFound/NotFound";
 import Home from "./Pages/Home/Home";
 import Movies from "./Pages/Movies/Movies";
-// import TvShow from "./Pages/TvShow/TvShow";
 import Profile from "./Pages/User Profile/Profile";
 import Movie from "./Pages/Movie/Movie";
 import PopularMovies from "./Pages/Popular/PopularMovies";
