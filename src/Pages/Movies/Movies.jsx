@@ -336,7 +336,7 @@ function Movies({ search, fetchSearch }) {
 
   return (
     <>
-      <MainHeader header={"Movies"} />.
+      <MainHeader header={language === "ar-KSA" ? "الأفلام" : "Movies"} />.
       <div className="container tags-container">
         <div id="tags" className="tags">
           {genres.map((genre) => (
@@ -355,7 +355,11 @@ function Movies({ search, fetchSearch }) {
       <div className="search container">
         <input
           type="search"
-          placeholder="Search Movie Name from here"
+          placeholder={
+            language === "ar-KSA"
+              ? "ابحث عن اسم الفيلم من هنا..."
+              : "Search Movie Name from here..."
+          }
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleSearchInputKeyDown}
@@ -384,12 +388,33 @@ function Movies({ search, fetchSearch }) {
 
           {search.length === 0 && selectedGenres.length === 0 && (
             <>
-              <MainHeading title={"categories"} icon={<BiSolidCategoryAlt />} />
+              <MainHeading
+                title={language === "ar-KSA" ? "الفئات" : "categories"}
+                icon={<BiSolidCategoryAlt />}
+              />
               <div className="movies-cat-cards">
-                <CatCard title={"popular movies"} link={"/movies/popular"} />
-                <CatCard title={"upcoming movies"} link={"/movies/upcoming"} />
                 <CatCard
-                  title={"top rated movies"}
+                  title={
+                    language === "ar-KSA"
+                      ? "الأفلام الأكثر شعبية"
+                      : "popular movies"
+                  }
+                  link={"/movies/popular"}
+                />
+                <CatCard
+                  title={
+                    language === "ar-KSA"
+                      ? "الأفلام القادمة"
+                      : "upcoming movies"
+                  }
+                  link={"/movies/upcoming"}
+                />
+                <CatCard
+                  title={
+                    language === "ar-KSA"
+                      ? "الأفلام الأعلى تقييمًا"
+                      : "top rated movies"
+                  }
                   link={"/movies/top_rated"}
                 />
               </div>
