@@ -6,8 +6,10 @@ import { fetchPopular } from "../../Actions/movieActions";
 import { connect } from "react-redux";
 import "./style/popularMovies.css";
 
+import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 
 function PopularMovies({ popular, fetchPopular }) {
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -51,7 +53,9 @@ function PopularMovies({ popular, fetchPopular }) {
 
   return (
     <>
-      <MainHeader header={"popular movies"} />
+      <MainHeader
+        header={language === "ar-KSA" ? "الأكثر شعبية" : "popular movies"}
+      />
       <section className="popular-Movies">
         <div className="container">
           <MovieList movies={popular} />
@@ -78,7 +82,7 @@ function PopularMovies({ popular, fetchPopular }) {
           />
         </Pagination>
       </div>
-    </  >
+    </>
   );
 }
 const mapStateToProps = (state) => ({

@@ -9,7 +9,6 @@ import { useSelector } from "react-redux"; // Import useSelector to access the R
 function Home() {
   const language = useSelector((state) => state.language); // Get the language from the Redux store
 
-  
   return (
     <>
       <section className="home-section">

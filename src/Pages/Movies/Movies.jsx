@@ -68,13 +68,14 @@ function Movies({ search, fetchSearch }) {
     const genreName = genres.find((gen) => gen.id === genreId)?.name;
     if (selectedGenres.includes(genreId)) {
       setSelectedGenres(selectedGenres.filter((id) => id !== genreId));
-      setSelectedGenreNames(selectedGenreNames.filter((name) => name !== genreName));
+      setSelectedGenreNames(
+        selectedGenreNames.filter((name) => name !== genreName)
+      );
     } else {
       setSelectedGenres([...selectedGenres, genreId]);
       setSelectedGenreNames([...selectedGenreNames, genreName]);
     }
   };
-  
 
   const handleSearchInputBlur = () => {
     if (query.trim() === "") {
@@ -121,7 +122,11 @@ function Movies({ search, fetchSearch }) {
     return (
       <>
         <MainHeading
-          title={`Search Result for "${query}"`}
+          title={
+            language === "ar-KSA"
+              ? `نتائج البحث الخاصة بي "${query}"`
+              : `Search Result for "${query}"`
+          }
           icon={<BiSearchAlt />}
         />
         <div className="search-res">
@@ -188,22 +193,7 @@ function Movies({ search, fetchSearch }) {
 
   return (
     <>
-      <MainHeader header={language === "ar-KSA" ? "الأفلام" : "Movies"} />.
-      <div className="container tags-container">
-        <div id="tags" className="tags">
-          {genres.map((genre) => (
-            <div
-              key={genre.id}
-              className={` tag ${
-                selectedGenres.includes(genre.id) ? "selected" : ""
-              }`}
-              onClick={() => toggleGenre(genre.id)}
-            >
-              {genre.name}
-            </div>
-          ))}
-        </div>
-      </div>
+      <MainHeader header={language === "ar-KSA" ? "الأفلام" : "Movies"} />
       <div className="search container">
         <input
           type="search"
@@ -219,6 +209,23 @@ function Movies({ search, fetchSearch }) {
           id="search-input"
         />
       </div>
+      {search.length === 0 && (
+        <div className="container tags-container">
+          <div id="tags" className="tags">
+            {genres.map((genre) => (
+              <div
+                key={genre.id}
+                className={` tag ${
+                  selectedGenres.includes(genre.id) ? "selected" : ""
+                }`}
+                onClick={() => toggleGenre(genre.id)}
+              >
+                {genre.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       <section className="movies-section">
         <div className="container">
           {search.length === 0 && query.trim() !== "" && (
@@ -240,8 +247,11 @@ function Movies({ search, fetchSearch }) {
               </Alert>
             </div>
           )}
-          
-          {movies.length > 0 && selectedGenres.length > 0 && displayGenre()}
+
+          {search.length === 0 &&
+            movies.length > 0 &&
+            selectedGenres.length > 0 &&
+            displayGenre()}
 
           {search.length === 0 && selectedGenres.length === 0 && (
             <>

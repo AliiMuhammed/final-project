@@ -186,3 +186,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   border-bottom-left-radius: 0;
   border-left: none;
 }
+
+.pagination {
+  direction: ltr;
+}

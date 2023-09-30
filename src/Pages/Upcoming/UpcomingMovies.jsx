@@ -5,8 +5,10 @@ import MovieList from "../../Shared/Components/MovieList";
 import { connect } from "react-redux";
 import { fetchUpcoming } from "../../Actions/movieActions";
 import "./style/upcoming.css";
+import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 
 function UpcomingMovies({ upcoming, fetchUpcoming }) {
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -50,7 +52,9 @@ function UpcomingMovies({ upcoming, fetchUpcoming }) {
 
   return (
     <>
-      <MainHeader header={"Upcoming movies"} />
+      <MainHeader
+        header={language === "ar-KSA" ? "الأفلام القادمة" : "Upcoming movies"}
+      />
       <section className="upcoming-Movies">
         <div className="container">
           <MovieList movies={upcoming} />

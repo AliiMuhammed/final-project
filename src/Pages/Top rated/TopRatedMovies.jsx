@@ -5,9 +5,11 @@ import MovieList from "../../Shared/Components/MovieList";
 import { connect } from "react-redux";
 import { fetchTopRated } from "../../Actions/movieActions";
 import "./style/topratedMovies.css";
+import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 
 function TopRatedMovies({ topRated, fetchTopRated }) {
   const [page, setPage] = useState(1);
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
 
   useEffect(() => {
     fetchTopRated(page);
@@ -50,7 +52,9 @@ function TopRatedMovies({ topRated, fetchTopRated }) {
 
   return (
     <>
-      <MainHeader header={"Top Rated movies"} />
+      <MainHeader
+        header={language === "ar-KSA" ? "الأعلى تقييمًا" : "Top Rated movies"}
+      />
       <section className="upcoming-Movies">
         <div className="container">
           <MovieList movies={topRated} />
