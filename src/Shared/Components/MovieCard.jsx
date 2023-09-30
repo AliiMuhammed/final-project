@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Style/movieCard.css";
 import { MdFavorite } from "react-icons/md";
 import { connect } from "react-redux";
+import { getAuthUser } from "../../Helper/Storage";
 import {
   addToFavorites,
   removeFromFavorites,
@@ -15,13 +16,13 @@ function MovieCard({
   removeFromFavorites,
   id,
 }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const auth = getAuthUser();
 
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const isMovieInFavorites = favorites.some(
     (favMovie) => favMovie.id === movie.id
   );
-
 
   useState(() => {
     setIsFavorite(isMovieInFavorites);
@@ -50,12 +51,18 @@ function MovieCard({
         </Link>
         <div className="content-card">
           <h1>{movie.title}</h1>
-          <button
-            className={`main-btn card-btn ${favoriteClass}`}
-            onClick={handleToggleFavorite}
-          >
-            <MdFavorite />
-          </button>
+          {auth ? (
+            <>
+              <button
+                className={`main-btn card-btn ${favoriteClass}`}
+                onClick={handleToggleFavorite}
+              >
+                <MdFavorite />
+              </button>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
