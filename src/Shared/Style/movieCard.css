@@ -71,7 +71,8 @@
 .main-btn.card-btn {
   padding: 0.3rem 0.7rem;
 }
-.main-btn.card-btn:disabled {
+
+.main-btn.card-btn.favourite {
   background-color: #fff;
   color: var(--hover-color);
   border-color: transparent;
