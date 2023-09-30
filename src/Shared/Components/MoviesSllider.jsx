@@ -20,7 +20,7 @@ function MoviesSllider({ topRated, fetchTopRated }) {
   return (
     <>
       <MainHeader
-        title={language === "ar-KSA" ? "الأكثر تقيمًا" : "Top rated"}
+        title={language === "ar-KSA" ? "الأعلى تقييمًا" : "Top rated"}
         icon={<BsFillBookmarkStarFill />}
       />
       <Swiper
