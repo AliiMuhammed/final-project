@@ -219,14 +219,19 @@ function Movies({ search, fetchSearch }) {
           {search.length === 0 && query.trim() !== "" && (
             <div className="alert">
               <Alert variant="danger" className="alert-primary">
-                {`There are no movies called "${query}"`}
+                {}
+                {language === "ar-KSA"
+                  ? `لا توجد أفلام باسم "${query}"`
+                  : `There are no movies called "${query}"`}
               </Alert>
             </div>
           )}
           {movies.length === 0 && selectedGenres.length > 0 && (
             <div className="alert">
               <Alert variant="danger" className="alert-primary">
-                {`There are no movies in this tags "${selectedGenres}"`}
+                {language === "ar-KSA"
+                  ? `لا توجد أفلام ضمن هذه الفئات "${selectedGenres}"`
+                  : `There are no movies in this tags "${selectedGenres}"`}
               </Alert>
             </div>
           )}

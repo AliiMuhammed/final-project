@@ -75,7 +75,12 @@
 .main-btn.card-btn.favourite {
   background-color: #fff;
   color: var(--hover-color);
-  border-color: transparent;
+  border-color: #fff;
+}
+
+.main-btn.card-btn.favourite:hover {
+  background-color: transparent;
+ 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

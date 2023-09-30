@@ -7,6 +7,8 @@ import MainHeader from "../../Shared/Components/MainHeader";
 import { getAuthUser } from "../../Helper/Storage";
 import MainHeading from "../../Shared/Components/MainHeading";
 import MovieList from "../../Shared/Components/MovieList";
+import Alert from "react-bootstrap/Alert";
+
 function FavoritePage({ favorites, removeFromFavorites, language }) {
   const handleRemoveFromFavorites = (movieId) => {
     removeFromFavorites(movieId);
@@ -22,28 +24,22 @@ function FavoritePage({ favorites, removeFromFavorites, language }) {
             title={language === "en-US" ? "Favorite Movies" : "أفلام المفضلة"}
             icon={<AiFillHeart />}
           />
-          <div className="favorite-movie-list">
-            <MovieList movies={favorites}/>
-          </div>
-          
+          {favorites.length === 0 && (
+            <div className="alert">
+              <Alert variant="danger" className="alert-primary">
+                {language === "ar-KSA"
+                  ? `لا توجد أفلام مقضلة`
+                  : `There are no favorite movies`}
+              </Alert>
+            </div>
+          )}
+          {favorites.length > 0 && (
+            <div className="favorite-movie-list">
+              <MovieList movies={favorites} />
+            </div>
+          )}
         </div>
       </section>
-      {/* <div className="favorite-movie-list">
-        {favorites.map((movie) => (
-          <div key={movie.id} className="favorite-movie">
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt=""
-            />
-            <h2>{movie.title}</h2>
-            <button onClick={() => handleRemoveFromFavorites(movie.id)}>
-              {language === "en-US"
-                ? "Remove from Favorites"
-                : "إزالة من المفضلة"}
-            </button>
-          </div>
-        ))}
-      </div> */}
     </>
   );
 }
