@@ -6,9 +6,15 @@ function MainHeader({ header, userImg }) {
       <section className="mainHeader-section">
         <div className="main-header">
           <div className="container">
-            <div className="userImg">
-              {userImg ? <img src={userImg} alt="" /> : ""}
-            </div>
+            {userImg ? (
+              <div
+                className="imageBG"
+                style={{ backgroundImage: `url(${userImg})` }}
+              ></div>
+            ) : (
+              ""
+            )}
+
             <h1>{header}</h1>
           </div>
         </div>
