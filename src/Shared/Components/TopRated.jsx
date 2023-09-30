@@ -14,7 +14,7 @@ function TopRated({ topRated, fetchTopRated }) {
       <section className="movieList-section">
         <div className="container">
           <MainHeader title={"Top Rated"} icon={<BsFire />} />
-          <MovieList movies={topRated.slice(0, 8)} />{" "}
+          <MovieList movies={topRated.slice(0, 8)} />
         </div>
       </section>
     </>

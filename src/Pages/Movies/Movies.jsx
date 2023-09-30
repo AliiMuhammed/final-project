@@ -154,7 +154,7 @@
 import React, { useEffect, useState } from "react";
 import MainHeader from "../../Shared/Components/MainHeader.jsx";
 import MainHeading from "../../Shared/Components/MainHeading.jsx";
-import { BiSolidCategoryAlt } from "react-icons/bi";
+import { BiSolidCategoryAlt, BiSearchAlt } from "react-icons/bi";
 import CatCard from "./components/CatCard.jsx";
 import "./style/movies.css";
 import Pagination from "react-bootstrap/Pagination";
@@ -216,7 +216,6 @@ function Movies({ search, fetchSearch }) {
       });
   }, [language, selectedGenres, page]);
 
-
   const toggleGenre = (genreId) => {
     if (selectedGenres.includes(genreId)) {
       setSelectedGenres(selectedGenres.filter((id) => id !== genreId));
@@ -269,6 +268,10 @@ function Movies({ search, fetchSearch }) {
   const displayMovies = () => {
     return (
       <>
+        <MainHeading
+          title={`Search Result for "${query}"`}
+          icon={<BiSearchAlt />}
+        />
         <div className="search-res">
           {search.map((movie) => {
             return <MovieCard movie={movie} key={movie.id} id={movie.id} />;
@@ -278,20 +281,17 @@ function Movies({ search, fetchSearch }) {
           <Pagination className="my-5 container  d-flex justify-content-center pagination-color">
             <Pagination.First
               onClick={showFrist}
-              disabled={currentPAge === 1 ? true : false}
+              disabled={currentPAge === 1}
             />
-            <Pagination.Prev
-              onClick={showPrev}
-              disabled={currentPAge === 1 ? true : false}
-            />
+            <Pagination.Prev onClick={showPrev} disabled={currentPAge === 1} />
             <Pagination.Item>{currentPAge}</Pagination.Item>
             <Pagination.Next
               onClick={showNext}
-              disabled={currentPAge === 34 ? true : false} // Use total_pages
+              disabled={currentPAge === 34} // Use total_pages
             />
             <Pagination.Last
               onClick={showLast}
-              disabled={currentPAge === 34 ? true : false} // Use total_pages
+              disabled={currentPAge === 34} // Use total_pages
             />
           </Pagination>
         </div>
@@ -309,20 +309,17 @@ function Movies({ search, fetchSearch }) {
           <Pagination className="my-5 container  d-flex justify-content-center pagination-color">
             <Pagination.First
               onClick={showFrist}
-              disabled={currentPAge === 1 ? true : false}
+              disabled={currentPAge === 1}
             />
-            <Pagination.Prev
-              onClick={showPrev}
-              disabled={currentPAge === 1 ? true : false}
-            />
+            <Pagination.Prev onClick={showPrev} disabled={currentPAge === 1} />
             <Pagination.Item>{currentPAge}</Pagination.Item>
             <Pagination.Next
               onClick={showNext}
-              disabled={currentPAge === 34 ? true : false} // Use total_pages
+              disabled={currentPAge === 34} // Use total_pages
             />
             <Pagination.Last
               onClick={showLast}
-              disabled={currentPAge === 34 ? true : false} // Use total_pages
+              disabled={currentPAge === 34} // Use total_pages
             />
           </Pagination>
         </div>
@@ -341,12 +338,11 @@ function Movies({ search, fetchSearch }) {
     <>
       <MainHeader header={"Movies"} />.
       <div className="container tags-container">
-        {/* <h1 className="mt-5">Movie Tags</h1> */}
         <div id="tags" className="tags">
           {genres.map((genre) => (
             <div
               key={genre.id}
-              className={`tag ${
+              className={` tag ${
                 selectedGenres.includes(genre.id) ? "selected" : ""
               }`}
               onClick={() => toggleGenre(genre.id)}
@@ -376,8 +372,15 @@ function Movies({ search, fetchSearch }) {
               </Alert>
             </div>
           )}
+          {movies.length === 0 && selectedGenres.length > 0 && (
+            <div className="alert">
+              <Alert variant="danger" className="alert-primary">
+                {`There are no movies in this tags "${selectedGenres}"`}
+              </Alert>
+            </div>
+          )}
 
-          {selectedGenres.length > 0 && displayGenre()}
+          {movies.length > 0 && selectedGenres.length > 0 && displayGenre()}
 
           {search.length === 0 && selectedGenres.length === 0 && (
             <>

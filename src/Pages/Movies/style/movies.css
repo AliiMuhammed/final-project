@@ -33,3 +33,44 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.tags-container {
+    margin-top: -100px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.tag {
+    padding: 10px 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin: 4px;
+    cursor: pointer;
+    border: 1px solid var(--hover-color);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    font-weight: bold;
+}
+
+.tag:hover {
+    background-color: var(--hover-color);
+}
+
+.selected {
+    background-color: var(--hover-color);
+}

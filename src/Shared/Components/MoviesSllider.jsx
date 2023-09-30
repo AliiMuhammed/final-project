@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { useSelector, connect } from "react-redux"; // Import useSelector to access the Redux store
 import { fetchTopRated } from "../../Actions/movieActions";
-
 import MainHeader from "./MainHeading";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,13 +11,18 @@ import "swiper/css/pagination";
 import "../Style/movieSlider.css";
 import MovieCard from "./MovieCard";
 function MoviesSllider({ topRated, fetchTopRated }) {
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
+
   useEffect(() => {
     fetchTopRated();
   }, [fetchTopRated]);
 
   return (
     <>
-      <MainHeader title={"Top Rated"} icon={<BsFillBookmarkStarFill />} />
+      <MainHeader
+        title={language === "ar-KSA" ? "الأكثر تقيمًا" : "Top rated"}
+        icon={<BsFillBookmarkStarFill />}
+      />
       <Swiper
         spaceBetween={30}
         grabCursor={true}

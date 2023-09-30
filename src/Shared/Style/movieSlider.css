@@ -1,6 +1,7 @@
 .mySwiper.top-rated {
   height: 100%;
   overflow-y: inherit;
+  direction: ltr;
 }
 
 .slide-movie,

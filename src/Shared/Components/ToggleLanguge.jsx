@@ -14,6 +14,14 @@ function LanguageToggle({ fun }) {
 
   const newLanguage = language === "en-US" ? "ar-KSA" : "en-US";
 
+  if (language === "ar-KSA") {
+    document.body.style.direction = "rtl";
+    document.body.setAttribute("dir", "rtl"); // Set right-to-left direction
+  } else {
+    document.body.style.direction = "ltr";
+    document.body.removeAttribute("dir"); // Set left-to-right direction
+  }
+
   const toggleLanguage = () => {
     dispatch(setLanguage(newLanguage));
     dispatch(fetchNowPlaying(1, newLanguage));

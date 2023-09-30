@@ -169,6 +169,16 @@ nav .container .icons a svg {
 
     }
 
+    body[dir="rtl"] .nav-links::before {
+        left: 0;
+        right: auto;
+    }
+
+    body[dir="rtl"] .nav-links {
+        left: 14px;
+        right: auto;
+    }
+
     .nav-links li {
         height: 4rem;
         width: 100%;
@@ -261,10 +271,7 @@ nav .container .icons a svg {
 }
 
 
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {}
+body[dir="rtl"] nav .container .icons a:last-child {
+    margin-right: 2rem;
+    margin-left: 0;
+}

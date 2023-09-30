@@ -88,10 +88,23 @@
     margin-right: 1rem;
 }
 
+body[dir="rtl"] .mySwiper .slider-content .rate-date .rate,
+.mySwiper .slider-content .rate-date .date {
+    margin-right: 0rem;
+    margin-left: 1rem;
+}
+
 .mySwiper .slider-content .rate-date .rate svg,
 .mySwiper .slider-content .rate-date .date svg {
     color: var(--hover-color);
     margin-right: 0.4rem;
+
+}
+
+body[dir="rtl"] .mySwiper .slider-content .rate-date .rate svg,
+body[dir="rtl"] .mySwiper .slider-content .rate-date .date svg {
+    margin-left: 0.4rem;
+    margin-right: 0;
 
 }
 
@@ -100,6 +113,12 @@
     padding: 0.8rem 2rem;
     font-size: 1rem;
     font-weight: 700;
+}
+
+body[dir="rtl"] .mySwiper .slider-content .btns .watch-btn {
+    margin-left: 1rem;
+    margin-right: 0rem;
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -114,7 +133,7 @@
 }
 
 .mySwiper .slider-content .btns .fav-slider-btn {
-    padding: 0.8rem 1.2rem;
+    padding: 0.7rem 1.2rem;
     font-size: 1rem;
     background-color: #ffffff52;
     border-color: transparent;
@@ -150,6 +169,3 @@
     position: absolute;
     z-index: -2
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {}

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../../Assets/images/logo/logo.png";
 import ToggleLanguge from "./ToggleLanguge";
 import { AiFillCloseSquare } from "react-icons/ai";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaUserCircle } from "react-icons/fa";
 import { HiOutlineLogout, HiOutlineLogin } from "react-icons/hi";
-import { FaUserCircle } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { getAuthUser, removeAuthUser } from "../../Helper/Storage";
+import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 
 import "../Style/navbar.css";
 
@@ -19,6 +20,7 @@ function NavBar() {
     removeAuthUser();
     navigate("/");
   };
+
   const links = [
     {
       id: 1,
@@ -30,22 +32,42 @@ function NavBar() {
       name: "Movies",
       path: "/movies",
     },
-    // {
-    //   id: 3,
-    //   name: "TV shows",
-    //   path: "/tvshows",
-    // },
     {
-      id: 4,
+      id: 3,
       name: "About Us",
       path: "/about",
     },
     {
-      id: 5,
+      id: 4,
       name: "Contact Us",
       path: "/contactUs",
     },
   ];
+
+  const arLinks = [
+    {
+      id: 1,
+      name: "الرئيسية",
+      path: "/",
+    },
+    {
+      id: 2,
+      name: "الأفلام",
+      path: "/movies",
+    },
+    {
+      id: 3,
+      name: "من نحن",
+      path: "/about",
+    },
+    {
+      id: 4,
+      name: "تواصل معنا",
+      path: "/contactUs",
+    },
+  ];
+
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
 
   return (
     <>
@@ -63,9 +85,8 @@ function NavBar() {
                   isNavShowing ? "show-nav" : "hide-nav"
                 }`}
               >
-                {links.map((link) => {
-                  return (
-                    <>
+                {language === "ar-KSA"
+                  ? arLinks.map((link) => (
                       <li key={link.id}>
                         <NavLink
                           key={link.id}
@@ -78,9 +99,21 @@ function NavBar() {
                           {link.name}
                         </NavLink>
                       </li>
-                    </>
-                  );
-                })}
+                    ))
+                  : links.map((link) => (
+                      <li key={link.id}>
+                        <NavLink
+                          key={link.id}
+                          to={link.path}
+                          className={({ isActive }) =>
+                            isActive ? "active-nav" : ""
+                          }
+                          onClick={() => setIsNavShowing((prev) => !prev)}
+                        >
+                          {link.name}
+                        </NavLink>
+                      </li>
+                    ))}
                 <li>
                   <ToggleLanguge fun={setIsNavShowing} />
                 </li>

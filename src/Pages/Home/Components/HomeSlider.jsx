@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
 import { fetchNowPlaying } from "../../../Actions/movieActions";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -9,7 +8,12 @@ import { MdFavorite } from "react-icons/md";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useSelector,connect } from "react-redux"; // Import useSelector to access the Redux store
+
 function HomeSlider({ nowPlaying, fetchNowPlaying }) {
+
+  const language = useSelector((state) => state.language); // Get the language from the Redux store
+
   useEffect(() => {
     fetchNowPlaying();
   }, [fetchNowPlaying]);
@@ -56,7 +60,7 @@ function HomeSlider({ nowPlaying, fetchNowPlaying }) {
                     to={`/movie/${movie.id}`}
                     className="main-btn watch-btn"
                   >
-                    Watch
+                    {language === "ar-KSA"?"شاهد الأن":"Watch Now"}
                   </Link>
                   <button className="main-btn fav-slider-btn">
                     <MdFavorite />
