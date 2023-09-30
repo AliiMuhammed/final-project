@@ -24,14 +24,24 @@ function AboutUs() {
             <div className="numbers">
               <div className="number-card">
                 <h1>{language === "ar-KSA" ? "١٠ آلاف" : "10K"}</h1>
-                <h3>{"Enjoyable Movie"}</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and</p>
+                <h3>
+                  {language === "ar-KSA" ? "فيلم ممتع" : "Enjoyable Movie"}
+                </h3>
+                <p>
+                  {language === "ar-KSA"
+                    ?"أكثر من 10 ألف فيلم ممتع."
+                    : "More than 10,000 fun movies."}
+                </p>
               </div>
               <div className="number-card">
                 <h1>{language === "ar-KSA" ? "٨ آلاف" : "8K"}</h1>
-                <h3>Lovely Users</h3>
+                <h3>
+                  {language === "ar-KSA" ? " من مستخدمين " : "Lovely Users"}
+                </h3>
                 <p>
-                  Completely free, without registration! Lorem Ipsum is simply
+                  {language === "ar-KSA"
+                    ? "أكثر من 8 آلاف مستخدم يثقون في خدماتنا."
+                    : "More than 8,000 users trust our services."}
                 </p>
               </div>
             </div>
