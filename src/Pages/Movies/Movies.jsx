@@ -23,6 +23,7 @@ function Movies({ search, fetchSearch }) {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [selectedGenreNames, setSelectedGenreNames] = useState([]);
 
   useEffect(() => {
     fetchSearch(page, query);
@@ -64,12 +65,16 @@ function Movies({ search, fetchSearch }) {
   }, [language, selectedGenres, page]);
 
   const toggleGenre = (genreId) => {
+    const genreName = genres.find((gen) => gen.id === genreId)?.name;
     if (selectedGenres.includes(genreId)) {
       setSelectedGenres(selectedGenres.filter((id) => id !== genreId));
+      setSelectedGenreNames(selectedGenreNames.filter((name) => name !== genreName));
     } else {
       setSelectedGenres([...selectedGenres, genreId]);
+      setSelectedGenreNames([...selectedGenreNames, genreName]);
     }
   };
+  
 
   const handleSearchInputBlur = () => {
     if (query.trim() === "") {
@@ -230,12 +235,12 @@ function Movies({ search, fetchSearch }) {
             <div className="alert">
               <Alert variant="danger" className="alert-primary">
                 {language === "ar-KSA"
-                  ? `لا توجد أفلام ضمن هذه الفئات "${selectedGenres}"`
-                  : `There are no movies in this tags "${selectedGenres}"`}
+                  ? `لا توجد أفلام ضمن هذه الفئات "${selectedGenreNames}"`
+                  : `There are no movies in this tags "${selectedGenreNames}"`}
               </Alert>
             </div>
           )}
-
+          
           {movies.length > 0 && selectedGenres.length > 0 && displayGenre()}
 
           {search.length === 0 && selectedGenres.length === 0 && (

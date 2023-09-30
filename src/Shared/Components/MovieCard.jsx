@@ -40,6 +40,8 @@ function MovieCard({
 
   const favoriteClass = isFavorite ? "favourite" : "";
 
+  
+
   return (
     <>
       <div className={`movie-card ${favoriteClass}`}>

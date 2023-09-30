@@ -14,6 +14,5 @@ export const getAuthUser = () => {
 export const removeAuthUser = () => {
   if (localStorage.getItem("user")) {
     localStorage.removeItem("user");
-    window.location.reload();
   }
 };

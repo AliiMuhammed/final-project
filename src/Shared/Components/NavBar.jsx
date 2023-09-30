@@ -69,6 +69,7 @@ function NavBar() {
 
   const language = useSelector((state) => state.language); // Get the language from the Redux store
 
+  
   return (
     <>
       <header>

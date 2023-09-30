@@ -30,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   background-size: cover;
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -53,7 +54,7 @@
   background-color: #0000003d;
   width: 100%;
   height: 100%;
-  z-index: -1;
+
 }
 
 body[dir="rtl"] .mySwiper.home .slider-content {
@@ -63,6 +64,8 @@ body[dir="rtl"] .mySwiper.home .slider-content {
 .mySwiper.home .slider-content .title {
   font-size: 4.5rem;
   margin-bottom: 2rem;
+  z-index: 2;
+  position: relative;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -87,6 +90,8 @@ body[dir="rtl"] .mySwiper.home .slider-content {
   align-items: center;
   font-size: 1rem;
   margin-bottom: 2rem;
+  z-index: 2;
+  position: relative;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -102,6 +107,7 @@ body[dir="rtl"] .mySwiper.home .slider-content {
   align-items: center;
   justify-content: center;
   margin-right: 1rem;
+
 }
 
 body[dir="rtl"] .mySwiper .slider-content .rate-date .rate,
@@ -127,6 +133,8 @@ body[dir="rtl"] .mySwiper .slider-content .rate-date .date svg {
   padding: 0.8rem 2rem;
   font-size: 1rem;
   font-weight: 700;
+  z-index: 2;
+  position: relative;
 }
 
 body[dir="rtl"] .mySwiper .slider-content .btns .watch-btn {
@@ -149,6 +157,8 @@ body[dir="rtl"] .mySwiper .slider-content .btns .watch-btn {
   font-size: 1rem;
   background-color: #ffffff52;
   border-color: transparent;
+  z-index: 2;
+  position: relative;
 }
 
 .mySwiper .slider-content .btns .fav-slider-btn:hover {

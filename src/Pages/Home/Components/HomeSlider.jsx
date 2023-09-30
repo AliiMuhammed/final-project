@@ -9,6 +9,7 @@ import { BsFillCalendarDateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useSelector, connect } from "react-redux";
+import { getAuthUser } from "../../../Helper/Storage";
 import {
   addToFavorites,
   removeFromFavorites,
@@ -42,6 +43,8 @@ function HomeSlider({
     }
   };
 
+  const auth = getAuthUser();
+
   return (
     <>
       <Swiper
@@ -66,7 +69,12 @@ function HomeSlider({
 
           return (
             <SwiperSlide key={movie.id}>
-              <div className="slider-content" style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})`}}>
+              <div
+                className="slider-content"
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})`,
+                }}
+              >
                 <h2 className="title">{movie.title}</h2>
                 <div className="rate-date">
                   <div className="rate">
@@ -85,14 +93,20 @@ function HomeSlider({
                   >
                     {language === "ar-KSA" ? "شاهد الأن" : "Watch Now"}
                   </Link>
-                  <button
-                    className={`main-btn fav-slider-btn ${
-                      isFavorite ? "favourite" : ""
-                    }`}
-                    onClick={() => handleToggleFavorite(movie)}
-                  >
-                    <MdFavorite />
-                  </button>
+                  {auth ? (
+                    <>
+                      <button
+                        className={`main-btn fav-slider-btn ${
+                          isFavorite ? "favourite" : ""
+                        }`}
+                        onClick={() => handleToggleFavorite(movie)}
+                      >
+                        <MdFavorite />
+                      </button>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </SwiperSlide>
