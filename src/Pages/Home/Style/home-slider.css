@@ -2,6 +2,7 @@
     height: 50vh;
     position: relative;
     font-weight: 700;
+    direction: ltr;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -38,6 +39,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+}
+body[dir="rtl"] .mySwiper.home .slider-content {
+    direction: rtl;
+
 }
 
 .mySwiper.home .slider-content .title {
