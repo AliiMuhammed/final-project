@@ -12,7 +12,9 @@ function ContactUs() {
 
   return (
     <>
-      <MainHeader header={"Contact Us"} />
+      <MainHeader
+        header={language === "ar-KSA" ? "تواصل معنا" : "Contact Us"}
+      />
       <section className="contact-section">
         <div className="container">
           <div className="contact-cards">

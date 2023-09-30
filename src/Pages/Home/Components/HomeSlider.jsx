@@ -43,7 +43,13 @@ function HomeSlider({
     }
   };
 
-  const auth = getAuthUser();
+  const [auth, setAuth] = useState(null); // Initialize auth as null
+  useEffect(() => {
+    // Fetch the authenticated user data
+    const user = getAuthUser();
+    setAuth(user); // Set the auth variable with the user data
+  }, [auth]); // Use an empty dependency array to fetch user data only once
+
 
   return (
     <>

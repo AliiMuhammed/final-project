@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Style/movieCard.css";
 import { MdFavorite } from "react-icons/md";
 import { connect } from "react-redux";
@@ -16,7 +16,12 @@ function MovieCard({
   removeFromFavorites,
   id,
 }) {
-  const auth = getAuthUser();
+  const [auth, setAuth] = useState(null); // Initialize auth as null
+  useEffect(() => {
+    // Fetch the authenticated user data
+    const user = getAuthUser();
+    setAuth(user); // Set the auth variable with the user data
+  }, [auth]); // Use an empty dependency array to fetch user data only once
 
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -39,8 +44,6 @@ function MovieCard({
   };
 
   const favoriteClass = isFavorite ? "favourite" : "";
-
-  
 
   return (
     <>
