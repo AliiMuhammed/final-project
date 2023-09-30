@@ -92,7 +92,10 @@
     height: 16px;
     cursor: pointer;
 }
-
+body[dir="rtl"] .show-pass input[type="checkbox"] {
+    margin-left: 0.5rem;
+    margin-right: 0rem;
+}
 .show-pass input[type="checkbox"]:checked {
     accent-color: var(--hover-color);
 }
@@ -122,7 +125,11 @@
     -o-transition: var(--main-transition);
     margin-left: 0.5rem;
 }
-
+body[dir="rtl"] .Form h5 a {
+    
+    margin-left: 0rem;
+    margin-right: 0.5rem;
+}
 .Form h5 a:hover {
     color: var(--hover-color);
 }

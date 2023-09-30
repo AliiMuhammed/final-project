@@ -66,11 +66,7 @@ function HomeSlider({
 
           return (
             <SwiperSlide key={movie.id}>
-              <div className="slider-content">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-                  alt=""
-                />
+              <div className="slider-content" style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})`}}>
                 <h2 className="title">{movie.title}</h2>
                 <div className="rate-date">
                   <div className="rate">

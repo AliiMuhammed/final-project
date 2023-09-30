@@ -5,7 +5,7 @@ import "../style/form.css";
 import { Link, useNavigate } from "react-router-dom";
 import { handleLogin } from "./ValidateLogin";
 
-function LoginForm() {
+function LoginForm({ language }) {
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState(""); // State to manage login errors
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function LoginForm() {
   };
 
   const handleLoginValidation = (e) => {
-    handleLogin(e, loginError, setLoginError, navigate); // Pass 'navigate' to handleLogin
+    handleLogin(e, loginError, setLoginError, navigate, language); // Pass 'navigate' and 'language' to handleLogin
   };
 
   return (
@@ -31,13 +31,13 @@ function LoginForm() {
           type="text"
           name="userName"
           id="userName"
-          placeholder="User Name"
+          placeholder={language === "ar-KSA" ? "اسم المستخدم" : "User Name"}
         />
         <input
           type={showPassword ? "text" : "password"}
           name="pass"
           id="Pass"
-          placeholder="Password"
+          placeholder={language === "ar-KSA" ? "كلمة السر" : "Password"}
         />
         <div className="show-pass">
           <input
@@ -46,11 +46,26 @@ function LoginForm() {
             id="show"
             onChange={toggleShowPassword}
           />
-          <label htmlFor="show">Show Password</label>
+          <label htmlFor="show">
+            {language === "ar-KSA" ? "اعرض كلمة السر" : "Show Password"}
+          </label>
         </div>
-        <input type="submit" value="Login" className="main-btn" />
+        <input
+          type="submit"
+          value={language === "ar-KSA" ? "تسجيل الدخول" : "Login"}
+          className="main-btn"
+        />
         <h5>
-          Don't have an account <Link to="/signUp">Sign Up</Link>
+          {language === "ar-KSA" ? (
+            <>
+              ليس لديك حساب؟ <Link to="/signUp">اشترك الآن</Link>
+            </>
+          ) : (
+            <>
+              
+              Don't have an account? <Link to="/signUp">Sign Up</Link>
+            </>
+          )}
         </h5>
       </form>
     </>

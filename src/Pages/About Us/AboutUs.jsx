@@ -1,8 +1,8 @@
 import React from "react";
 import "./style/about.css";
 import MainHeader from "../../Shared/Components/MainHeader";
-import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 
+import { useSelector } from "react-redux"; // Import useSelector to access the Redux store
 function AboutUs() {
   const language = useSelector((state) => state.language); // Get the language from the Redux store
   return (
@@ -29,7 +29,7 @@ function AboutUs() {
                 </h3>
                 <p>
                   {language === "ar-KSA"
-                    ?"أكثر من 10 ألف فيلم ممتع."
+                    ? "أكثر من 10 ألف فيلم ممتع."
                     : "More than 10,000 fun movies."}
                 </p>
               </div>

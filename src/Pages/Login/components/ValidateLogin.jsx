@@ -1,4 +1,10 @@
-export const handleLogin = (e, loginError, setLoginError, navigate) => {
+export const handleLogin = (
+  e,
+  loginError,
+  setLoginError,
+  navigate,
+  language
+) => {
   e.preventDefault();
 
   // Retrieve the values of the username and password fields
@@ -7,7 +13,11 @@ export const handleLogin = (e, loginError, setLoginError, navigate) => {
 
   // Check if the fields are empty
   if (!userName || !userPassword) {
-    setLoginError("Username and password are required.");
+    setLoginError(
+      language === "ar-KSA"
+        ? "خطأ في اسم المستخدم أو كلمة المرور."
+        : "Username and password are required."
+    );
     return;
   }
 
@@ -25,6 +35,10 @@ export const handleLogin = (e, loginError, setLoginError, navigate) => {
     // Redirect to the logged-in user's profile or dashboard
     navigate("/");
   } else {
-    setLoginError("Invalid username or password.");
+    setLoginError(
+      language === "ar-KSA"
+        ? "اسم المستخدم أو كلمة المرور غير صحيحة."
+        : "Invalid username or password."
+    );
   }
 };
