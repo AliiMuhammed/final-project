@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import logo from "../../Assets/images/logo/logo.png";
 import ToggleLanguge from "./ToggleLanguge";
 import { AiFillCloseSquare } from "react-icons/ai";
